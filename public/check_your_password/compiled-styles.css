@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700");
+@import url("https://api.fontshare.com/css?f[]=montserrat@400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source Sans Pro:wght@400;700");
+@import url("https://api.fontshare.com/css?f[]=source sans pro@400,700&display=swap");
+
+p,
+ol,
+ul {
+  margin: 0px;
+}
+
+button {
+  padding: 0px;
+}
+
+ol,
+ul {
+  padding-inline-start: 1.5em;
+}
+
+input {
+  background-image: none;
+  background-color: transparent;
+}
+
+.check-you-email-check-you-email {
+  width: 100%;
+  display: flex;
+  padding-top: 322px;
+  padding-right: 616px;
+  padding-left: 616px;
+  padding-bottom: 321px;
+  background-color: rgba(255, 251, 234, 1);
+  align-items: center;
+}
+
+.check-you-email-rectangle {
+  flex-shrink: 0;
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  padding-top: 141px;
+  padding-right: 7px;
+  padding-left: 24px;
+  padding-bottom: 57px;
+  width: 688px;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 1);
+  align-items: center;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  font-size: 20px;
+  line-height: normal;
+  letter-spacing: 0em;
+}
+
+.check-you-email-check-your-email {
+  align-self: stretch;
+  padding-right: 50px;
+  padding-left: 50px;
+  font-weight: 700;
+  font-size: 40px;
+  font-family: Montserrat;
+}
+
+.check-you-email-we-ve-sent-you-alink-to-reset-apassword {
+  align-self: stretch;
+  padding-top: 13px;
+  padding-left: 50px;
+  align-items: flex-end;
+  display: flex;
+  font-weight: 500;
+  font-family: Montserrat;
+}
+
+.check-you-email-sign-up {
+  align-self: stretch;
+  padding-top: 16px;
+  padding-right: 82px;
+  padding-left: 72px;
+  padding-bottom: 16px;
+  margin-right: 68px;
+  margin-left: 50px;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 1);
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: Source Sans Pro;
+  color: rgba(255, 255, 255, 1);
+}
+
+.account-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.already-account {
+  font-family: Source Sans Pro;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-right: 5px;
+}
+
+.login-link {
+  font-family: Source Sans Pro;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgba(0, 168, 150, 1);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.check-you-email-email-icon {
+  flex-shrink: 0;
+  position: absolute;
+  top: 42px;
+  left: 73px;
+  height: 74px;
+  width: 74px;
+  object-position: center;
+  object-fit: cover;
+}
