@@ -1,0 +1,121 @@
+body {
+  font-family: 'Circular', 'Proxima Nova', sans-serif;
+  background-color: #F5F5F5;
+  color: #424242;
+}
+
+.container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 800px; /* Set a max-width for better alignment */
+  margin: 0 auto; /* Center align the container */
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+label {
+  display: block;
+  margin-top: 24px;
+  font-weight: 600;
+  color: #444;
+  font-size: 16px;
+}
+
+input[type="text"], textarea, .profile-pic-upload, button {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Circular', 'Proxima Nova', sans-serif;
+}
+
+.profile-pic-upload {
+  width: 100%;
+  height: 200px;
+  border: 2px dashed #FFC629;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #FFF9E6;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.profile-pic-upload:hover {
+  background-color: #FFF2CC;
+  border-color: #FFB400;
+}
+
+.profile-pic-upload::before {
+  content: '\1F4F7';
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.profile-pic-upload::after {
+  content: 'Click to upload your profile picture';
+  font-size: 16px;
+  color: #666;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.profile-pic-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #FFC629;
+  color: #424242;
+  border-radius: 100px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px 32px;
+  box-shadow: 0 2px 8px rgba(255, 198, 41, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #222;
+  color: #FFF;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 16.67%;
+  height: 8px;
+  background-color: #000;
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}

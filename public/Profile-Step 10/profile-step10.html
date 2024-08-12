@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Setup - Step 10</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Profile Setup</h2>
+    
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-partners" style="width: 100%;"></div>
+      </div>
+      <span class="progress-label">Study Partners Setup</span>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-groups" style="width: 0%;"></div>
+      </div>
+      <span class="progress-label">Study Group Setup</span>
+    </div>
+
+    <form id="profileForm10">
+      <label for="motivation">What Motivates You to Study?</label>
+      <div id="motivation" class="tags-container">
+        <div class="tag" onclick="toggleTag(this)" data-value="Achieving high grades">Achieving high grades</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Mastering the subject matter">Mastering the subject matter</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Interest in the subject">Interest in the subject</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Peer encouragement">Peer encouragement</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Future career goals">Future career goals</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Personal satisfaction">Personal satisfaction</div>
+      </div>
+      <div class="button-container">
+        <button type="button" id="prev-button" onclick="navigateToPrevious()">Previous</button>
+        <button type="submit" id="next-button" disabled>Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>
