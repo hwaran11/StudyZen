@@ -1,0 +1,185 @@
+/* Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Neubrutalist Color Palette */
+:root {
+  --primary-blue: #1B3B6F;
+  --accent-blue: #3A6EA5;
+  --background-cream: #F8F6F0;
+  --white: #FFFFFF;
+  --neutral-charcoal: #2f3438;
+  --bold-border: 1px solid #000000;
+}
+
+/* Reset and Base Styles */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-cream);
+  line-height: 1.5;
+  color: var(--neutral-charcoal);
+}
+
+/* Header and Navigation */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
+  border-bottom: 1px solid #000;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: all 0.2s ease;
+  font-family: 'Playfair Display', serif;
+}
+
+.nav-logo:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-button {
+  background: none;
+  border: 1px solid #000;
+  transition: all 0.2s ease;
+}
+
+.nav-button a {
+  text-decoration: none;
+  color: var(--neutral-charcoal);
+  padding: 8px 16px;
+  display: inline-block;
+}
+
+.nav-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.login a {
+  background-color: var(--background-cream);
+}
+
+.signup a {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  padding-top: 80px;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-heading {
+  font-size: 3rem;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-heading span {
+  display: block;
+}
+
+.hero-description {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--neutral-charcoal);
+}
+
+.hero-buttons {
+  display: flex;
+}
+
+.cta-btn {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: 1px solid #000;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+  background-color: var(--accent-blue);
+}
+
+.cta-btn a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    background-color: var(--white);
+    border-top: 1px solid #000;
+    transition: 0.3s;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav-menu.show {
+    left: 0;
+  }
+}
