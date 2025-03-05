@@ -65,7 +65,6 @@ body {
 .login-form {
   background-color: var(--white);
   border: var(--bold-border);
-  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
   padding: 40px;
   position: relative;
   z-index: 1;
@@ -137,7 +136,6 @@ body {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .submit-button:hover {
@@ -190,6 +188,14 @@ body {
 
 /* Responsive Design */
 @media (max-width: 600px) {
+  .login-section {
+    min-height: 50vh;
+  }
+  
+  .login-form h1 {
+    font-size: 1.5rem;
+  }
+
   .login-form {
     padding: 20px;
   }

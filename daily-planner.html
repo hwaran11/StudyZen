@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyZen - Productivity App</title>
+
+    <link rel="stylesheet" href="/assets/css/daily-planner.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!--Lucide CDN links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.iife.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+        });
+    </script>
+
+    <!--Font Awesome CSS -->
+    <script src="https://kit.fontawesome.com/a780dab40f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div id="logo-container" class="logo-container">
+            <a href="#" class="logo">StudyZen</a>
+        </div>
+
+        <div id="user-profile" class="user-profile">
+            <div class="profile-content">
+                <div class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="profile-details">
+                    <p class="profile-name">Alex Johnson</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul id="nav-list">
+                <li>
+                    <a href="#" class="nav-item">
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Study Groups</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item active">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Daily Planner</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item">
+                        <i class="fa-solid fa-calendar"></i>
+                        <span>Calendar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item">
+                        <i class="fa-solid fa-spa"></i>
+                        <span>Mindfulness</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn">Logout</button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+        <!-- Greeting Section -->
+        <div class="greeting-container">
+            <section class="greeting-section">
+                <div class="greeting-content">
+                    <div class="user-greeting">
+                        <div class="user-name-container">
+                            <h1>Good Morning, Alex Johnson</h1>
+                        </div>
+                        <p>Your productivity journey continues today with incredible potential</p>
+                    </div>
+                </div>
+                <div class="user-insights">
+                    <div class="insight-card">
+                        <div class="insight-value">3</div>
+                        <div class="insight-label">Tasks Pending</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-value">2h 30m</div>
+                        <div class="insight-label">Focus Time</div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-value">1/3</div>
+                        <div class="insight-label">Completed</div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="productivityStreak" class="productivity-streak">
+                <div id="streakIcon" class="streak-icon">🔥</div>
+                <div class="streak-title">Productivity Streak</div>
+                <div id="streakNumber" class="streak-number">0</div>
+                <div class="streak-description">Consecutive days of goal achievement</div>
+                <div id="streakMotivation" class="streak-motivation"></div>
+            </div>     
+
+            <div class="notification-container">
+                <button id="notificationBtn" class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span id="notificationBadge" class="notification-badge">3</span>
+                </button>
+    
+                <div id="notificationInbox" class="notification-inbox">
+                    <div class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-title">Streak Milestone</div>
+                            <div class="notification-text">You've reached a 7-day productivity streak!</div>
+                            <div class="notification-time">Just now</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Task Management -->
+        <section class="task-management-section">
+            <div class="date-picker">
+                <button class="date-picker-btn calendar-btn" aria-label="Choose Date">
+                    <i class="fa-solid fa-calendar"></i>
+                    <input type="date" class="date-input" id="datePicker">
+                </button>
+                <button class="date-picker-btn" aria-label="Previous Date">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <span class="date-display">Today, March 5</span>
+                <button class="date-picker-btn" aria-label="Next Date">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
+        
+            <div class="task-categories-container">
+                <div class="task-categories">
+                    <!-- Existing Category Cards -->
+                    <div class="category-card">
+                        <div class="category-header">
+                            <h3>Physical Win</h3>
+                            <button class="add-task-btn">
+                                <i class="fa-solid fa-plus"></i>
+                                Add Task
+                            </button>
+                        </div>
+                        <div class="task-item">
+                            <span class="task-priority priority-high"></span>
+                            <div class="task-details">
+                                <strong>Gym Workout</strong>
+                                <p>7:00 AM - 8:00 AM | Chest Day</p>
+                            </div>
+                            <div class="task-actions">
+                                <input type="checkbox" class="task-checkbox">
+                                <button class="task-actions-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="task-actions-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="category-card">
+                        <div class="category-header">
+                            <h3>Mental Win</h3>
+                            <button class="add-task-btn">
+                                <i class="fa-solid fa-plus"></i>
+                                Add Task
+                            </button>
+                        </div>
+                        <div class="task-item">
+                            <span class="task-priority priority-medium"></span>
+                            <div class="task-details">
+                                <strong>Read Atomic Habits</strong>
+                                <p>8:00 AM - 9:00 AM | Highlight Key Points</p>
+                            </div>
+                            <div class="task-actions">
+                                <input type="checkbox" class="task-checkbox">
+                                <button class="task-actions-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="task-actions-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="category-card">
+                        <div class="category-header">
+                            <h3>Spiritual Win</h3>
+                            <button class="add-task-btn">
+                                <i class="fa-solid fa-plus"></i>
+                                Add Task
+                            </button>
+                        </div>
+                        <div class="task-item">
+                            <span class="task-priority priority-low"></span>
+                            <div class="task-details">
+                                <strong>Meditate for 5 min</strong>
+                                <p>9:00 AM - 10:00 AM | Focus</p>
+                            </div>
+                            <div class="task-actions">
+                                <input type="checkbox" class="task-checkbox">
+                                <button class="task-actions-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                                <button class="task-actions-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Add Category Card -->
+                    <div class="category-card add-category-card">
+                        <div class="add-category-content">
+                            <button class="add-category-btn">
+                                <i class="fa-solid fa-plus"></i>
+                                <span>Add New Category</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/assets/js/daily-planner.js"></script>
+</body>
+</html>

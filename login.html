@@ -18,39 +18,37 @@
 </head>
 <body>
 
-    <a href="/index.html" class="back-button">
-        <i class="ri-arrow-left-line">Back to Home</i>
-    </a>
-
     <section class="login-section">
         <div class="login-container">
             <div class="login-form">
                 <div class="login-background"></div>
                 <h1>Login to <span>StudyZen</span></h1>
                 <p class="subtitle"> Fill up your university's email and password to login</p>
-
+    
                 <form action="" class="form">
                     <div class="input-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" placeholder="Your email" required>
                     </div>
-                    <div class="input-group">
-                        <label for="password">Password</label>
+                    <div class="input-group input-group--password">
+                        <div class="password-header">
+                            <label for="password">Password</label>
+                            <a href="/forgot-password.html" class="forgot-password">Forgot Password?</a>
+                        </div>
                         <input type="password" id="password" placeholder="Your password" required>
                     </div>
                     <button type="submit" class="submit-button">Log In</button>
                 </form>
-
+    
                 <div class="or-divider">
                     <span>or</span>
                 </div>
-
+    
                 <p class="signup-option">
                     Don't have an account? <span><a href="/signup.html">Sign up here</a></span>
                 </p>
             </div>
         </div>
     </section>
-    
 </body>
 </html>
