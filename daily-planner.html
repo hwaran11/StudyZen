@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyZen - Productivity App</title>
+    <title>Daily Planner</title>
 
     <link rel="stylesheet" href="/assets/css/daily-planner.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!--Font Awesome CSS -->
+    <script src="https://kit.fontawesome.com/a780dab40f.js" crossorigin="anonymous"></script>
 
     <!--Lucide CDN links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
@@ -19,66 +22,88 @@
             lucide.createIcons();
         });
     </script>
-
-    <!--Font Awesome CSS -->
-    <script src="https://kit.fontawesome.com/a780dab40f.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Sidebar -->
     <aside id="sidebar" class="sidebar">
-        <div id="logo-container" class="logo-container">
-            <a href="#" class="logo">StudyZen</a>
-        </div>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">
+    </div>
 
-        <div id="user-profile" class="user-profile">
-            <div class="profile-content">
-                <div class="profile-icon">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <div class="profile-details">
-                    <p class="profile-name">Alex Johnson</p>
-                </div>
+    <div id="logo-container" class="logo-container">
+        <a href="#" class="logo">StudyZen</a>
+    </div>
+
+    <div id="user-profile" class="user-profile">
+        <div class="profile-content">
+            <div class="profile-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="profile-details">
+                <p class="profile-name">Alex Johnson</p>
+                <p class="profile-role"></p>
             </div>
         </div>
+    </div>
 
-        <nav class="sidebar-nav">
-            <ul id="nav-list">
-                <li>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-chart-simple"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <span>Study Groups</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-item active">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <span>Daily Planner</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-calendar"></i>
-                        <span>Calendar</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-item">
-                        <i class="fa-solid fa-spa"></i>
-                        <span>Mindfulness</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <nav class="sidebar-nav">
+        <ul id="nav-list">
+            <li>
+                <a href="#" class="nav-item" style="--item-index: 1;">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-item" style="--item-index: 2;">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Study Groups</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-item active" style="--item-index: 3;">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Daily Planner</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-item" style="--item-index: 4;">
+                    <i class="fa-solid fa-calendar"></i>
+                    <span>Calendar</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-item" style="--item-index: 5;">
+                    <i class="fa-solid fa-spa"></i>
+                    <span>Mindfulness</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-        <div class="sidebar-footer">
-            <button class="logout-btn">Logout</button>
+    <div class="sidebar-footer">
+        <div class="user-status">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span class="status-text">Online</span>
+            </div>
+            <div class="quick-actions">
+                <button class="action-btn" data-tooltip="Notifications">
+                    <i class="fa-solid fa-bell"></i>
+                </button>
+            </div>
         </div>
+        <div class="footer-actions">
+            <button class="footer-btn settings-btn" data-tooltip="Settings">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+            </button>
+            <button class="footer-btn logout-btn" data-tooltip="Logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+        <p class="help-text">Need help? <a href="#">Contact support</a></p>
+    </div>
     </aside>
 
     <!-- Main Content -->
@@ -101,12 +126,12 @@
                     </div>
                     <div class="insight-card">
                         <div class="insight-value">2h 30m</div>
-                        <div class="insight-label">Focus Time</div>
+                        <div class="insight-label">Time Spent on Tasks</div>
                     </div>
                     <div class="insight-card">
-                        <div class="insight-value">1/3</div>
+                        <div class="insight-value">0/4</div>
                         <div class="insight-label">Completed</div>
-                    </div>
+                    </div>            
                 </div>
             </section>
 
@@ -140,10 +165,6 @@
         <!-- Task Management -->
         <section class="task-management-section">
             <div class="date-picker">
-                <button class="date-picker-btn calendar-btn" aria-label="Choose Date">
-                    <i class="fa-solid fa-calendar"></i>
-                    <input type="date" class="date-input" id="datePicker">
-                </button>
                 <button class="date-picker-btn" aria-label="Previous Date">
                     <i data-lucide="chevron-left"></i>
                 </button>
@@ -234,7 +255,7 @@
                         </div>
                     </div>
         
-                    <!-- Add Category Card -->
+                    <!-- Add Category Card 
                     <div class="category-card add-category-card">
                         <div class="add-category-content">
                             <button class="add-category-btn">
@@ -242,7 +263,7 @@
                                 <span>Add New Category</span>
                             </button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

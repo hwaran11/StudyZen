@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindfulness</title>
+    <link rel="stylesheet" href="/assets/css/mindfulness.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!--Font Awesome CSS -->
+    <script src="https://kit.fontawesome.com/a780dab40f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-toggle" onclick="toggleSidebar()">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    
+        <div id="logo-container" class="logo-container">
+            <a href="#" class="logo">StudyZen</a>
+        </div>
+    
+        <div id="user-profile" class="user-profile">
+            <div class="profile-content">
+                <div class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="profile-details">
+                    <p class="profile-name">Alex Johnson</p>
+                    <p class="profile-role"></p>
+                </div>
+            </div>
+        </div>
+    
+        <nav class="sidebar-nav">
+            <ul id="nav-list">
+                <li>
+                    <a href="#" class="nav-item" style="--item-index: 1;">
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item" style="--item-index: 2;">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Study Groups</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item" style="--item-index: 3;">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Daily Planner</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item" style="--item-index: 4;">
+                        <i class="fa-solid fa-calendar"></i>
+                        <span>Calendar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item active" style="--item-index: 5;">
+                        <i class="fa-solid fa-spa"></i>
+                        <span>Mindfulness</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    
+        <div class="sidebar-footer">
+            <div class="user-status">
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span class="status-text">Online</span>
+                </div>
+                <div class="quick-actions">
+                    <button class="action-btn" data-tooltip="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="footer-actions">
+                <button class="footer-btn settings-btn" data-tooltip="Settings">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </button>
+                <button class="footer-btn logout-btn" data-tooltip="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+            <p class="help-text">Need help? <a href="#">Contact support</a></p>
+        </div>
+    </aside>
+
+    <main class="content">
+
+            <header class="quick-actions-header">
+                <div class="greeting-content">
+                    <div class="user-greeting">
+                        <div class="user-name-container">
+                            <h1>Good Morning, Alex Johnson</h1>
+                        </div>
+                        <p>Your productivity journey continues today with incredible potential</p>
+                    </div>
+
+                    <!-- Inside the quick-actions-header section, add this right after the user-greeting div -->
+                    <div class="notification-toggle">
+                        <i class="fas fa-bell notification-icon"></i>
+                        <span class="toggle-label">Notifications</span>
+                        <label class="toggle-switch">
+                        <input type="checkbox" id="notificationToggle">
+                        <span class="toggle-slider"></span>
+                        </label>
+                        <div class="notification-tooltip">Enable break reminders and study tips</div>
+                    </div>
+                </div>
+
+                <div class="quick-actions-grid">
+                    <div class="action-card">
+                        <i class="fas fa-clock"></i>
+                        <h3 id="pomodoroStatus">Focus Mode: 25 mins left</h3>
+                        <p>Current session</p>
+                    </div>
+                    
+                    <div class="action-card">
+                        <i class="fas fa-hourglass-half"></i>
+                        <h3 id="totalFocusTime">0h 0m focused</h3>
+                        <p>Total focus time today</p>
+                    </div>
+                
+                    <div class="action-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3 id="breaksTaken">0 mindfulness breaks</h3>
+                        <p>Breaks taken today</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Pomodoro Timer Widget -->
+            <section class="pomodoro-container">
+                <h2>Pomodoro Timer </h2>
+                <div class="pomodoro-widget">
+                    <div class="pomodoro-timer">
+                        <div class="timer-display" id="timerDisplay">25:00</div>
+                        <!-- Add this right after the timer-display div -->
+                        <div class="mode-indicator" id="modeIndicator">Focus Time</div>
+                        <div class="timer-controls">
+                            <button class="timer-btn" id="startTimer">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="timer-btn" id="pauseTimer">
+                                <i class="fas fa-pause"></i>
+                            </button>
+                            <button class="timer-btn" id="resetTimer">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="pomodoro-settings">
+                        <div class="setting">
+                            <label for="focusDuration">Focus Duration:</label>
+                            <select id="focusDuration">
+                                <option value="15">15 min</option>
+                                <option value="25" selected>25 min</option>
+                                <option value="30">30 min</option>
+                                <option value="45">45 min</option>
+                                <option value="60">60 min</option>
+                            </select>
+                        </div>
+                        <div class="setting">
+                            <label for="breakDuration">Short Break:</label>
+                            <select id="breakDuration">
+                                <option value="3">3 min</option>
+                                <option value="5" selected>5 min</option>
+                                <option value="10">10 min</option>
+                            </select>
+                        </div>
+                        <div class="setting">
+                            <label for="longBreakDuration">Long Break:</label>
+                            <select id="longBreakDuration">
+                                <option value="10">10 min</option>
+                                <option value="15" selected>15 min</option>
+                                <option value="20">20 min</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="session-tracker">
+                    <div class="session-indicator active"></div>
+                    <div class="session-indicator"></div>
+                    <div class="session-indicator"></div>
+                    <div class="session-indicator"></div>
+                </div>
+            </section>
+
+            <!-- Guided Exercises Section -->
+            <section class="guided-exercises">
+                <h2>Guided Exercises</h2>
+                <div class="exercise-cards">
+                  <div class="exercise-card" id="breathingExercise">
+                    <div class="exercise-icon"><i class="fas fa-wind"></i></div>
+                    <div class="exercise-info">
+                      <h3>Deep Breathing</h3>
+                      <p>Box breathing technique (4-4-4-4)</p>
+                    </div>
+                    <span class="exercise-duration">2 min</span>
+                  </div>
+                  <div class="exercise-card" id="meditationExercise">
+                    <div class="exercise-icon"><i class="fas fa-om"></i></div>
+                    <div class="exercise-info">
+                      <h3>Short Meditation</h3>
+                      <p>Body scan relaxation</p>
+                    </div>
+                    <span class="exercise-duration">5 min</span>
+                  </div>
+                  <div class="exercise-card">
+                    <div class="exercise-icon"><i class="fas fa-om"></i></div>
+                    <div class="exercise-info">
+                      <h3>Long Meditation</h3>
+                      <p>Body scan relaxation</p>
+                    </div>
+                    <span class="exercise-duration">10 min</span>
+                  </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Breathing Exercise Container (replaces modal) -->
+        <div class="exercise-container" id="breathingContainer">
+            <div class="exercise-content">
+                <div class="exercise-header">
+                    <h2>Deep Breathing Exercise</h2>
+                    <button class="close-exercise-btn" id="closeBreathingContainer">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="exercise-body">
+                    <div class="breathing-animation">
+                        <div class="breathing-circle"></div>
+                        <div class="breathing-text">Breathe in...</div>
+                    </div>
+                    <div class="breathing-instructions">
+                        <p>Follow the animation and breathe along with the expanding and contracting circle.</p>
+                        <p>Inhale for 4 seconds, hold for 4 seconds, exhale for 4 seconds, hold for 4 seconds.</p>
+                    </div>
+                    <div class="timer-display breathing-timer">2:00</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Break Reminder Container (replaces modal) -->
+        <div class="exercise-container" id="breakReminderContainer">
+            <div class="exercise-content">
+                <div class="exercise-header">
+                    <h2>Time for a Break!</h2>
+                    <button class="close-exercise-btn" id="closeBreakContainer">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="exercise-body">
+                    <div class="break-illustration">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <p>You've completed a focused session. Time to take a 5-minute break.</p>
+                    <div class="break-options">
+                        <button class="break-option-btn" id="startBreathingExercise">
+                            <i class="fas fa-wind"></i> Breathing Exercise
+                        </button>
+                        <button class="break-option-btn" id="startBreakTimer">
+                            <i class="fas fa-hourglass-start"></i> Start Break Timer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="/assets/js/mindfulness.js"></script>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('expanded');
+            
+            const toggleIcon = document.querySelector('.sidebar-toggle i');
+            toggleIcon.classList.toggle('fa-chevron-right');
+            toggleIcon.classList.toggle('fa-chevron-left');
+        }
+        </script>
+</body>
+</html>
