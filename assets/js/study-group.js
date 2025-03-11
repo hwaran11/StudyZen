@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         1: {
             name: "Sofea",
             role: "Computer Science",
+            match: "85%",
             preferences: {
                 time: "evening",
                 approach: "Problem-solving"
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         2: {
             name: "Aisha Rahman",
             role: "Petroleum Engineering",
+            match: "92%",
             preferences: {
                 time: "morning",
                 approach: "Sharing notes and resources"
@@ -24,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         3: {
             name: "Faizal Aziz",
             role: "Chemical Engineering",
+            match: "77%",
             preferences: {
                 time: "afternoon",
                 approach: "Motivating and holding each other accountable"
@@ -55,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="profile-info">
                         <h2 class="profile-name">${profile.name}</h2>
                         <p class="profile-role">${profile.role}</p>
+                        <p class="match-label">${profile.match} Match</p>
                     </div>
                 </div>
                 

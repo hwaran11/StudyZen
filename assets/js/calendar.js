@@ -66,7 +66,7 @@ const sampleEvents = [
     endHour: 12,
     endMinute: 0,
     priority: "high",
-  }
+  },
 ];
 
 // Initialize Calendar
@@ -98,7 +98,7 @@ function updateWeekStartDate() {
 function generateCalendar() {
   // Reset all view-specific classes
   calendarGrid.classList.remove("week-view", "day-view");
-  
+
   if (calendarState.currentView === "month") {
     generateMonthView();
   } else if (calendarState.currentView === "week") {
@@ -170,7 +170,7 @@ function generateMonthView() {
 
     createDayCell(day, true, nextYear, nextMonth);
   }
-  
+
   // Add events to the month view
   addEventsToMonthView();
 }
@@ -182,12 +182,12 @@ function createDayCell(day, isOtherMonth, year, month, isToday = false) {
 
   // Add styling for days from previous or next month
   if (isOtherMonth) {
-      cell.classList.add("other-month");
+    cell.classList.add("other-month");
   }
 
   // Highlight today’s date
   if (isToday) {
-      cell.classList.add("current-day");
+    cell.classList.add("current-day");
   }
 
   // Create the day number inside the cell
@@ -199,24 +199,26 @@ function createDayCell(day, isOtherMonth, year, month, isToday = false) {
   // Add dataset attributes for date tracking
   const fullDate = new Date(year, month, day);
   cell.dataset.date = `${year}-${month + 1}-${day}`;
-  cell.dataset.fullDate = fullDate.toISOString().split('T')[0];
+  cell.dataset.fullDate = fullDate.toISOString().split("T")[0];
 
   // Click event: Switch to Day View when clicking a day cell
   cell.addEventListener("click", () => {
-      // Remove selection from all day cells
-      document.querySelectorAll(".day-cell").forEach(dc => dc.classList.remove("selected"));
-      cell.classList.add("selected");
+    // Remove selection from all day cells
+    document
+      .querySelectorAll(".day-cell")
+      .forEach((dc) => dc.classList.remove("selected"));
+    cell.classList.add("selected");
 
-      // Update calendar state
-      calendarState.currentDate = fullDate;
-      calendarState.selectedDate = fullDate;
-      calendarState.currentView = "day";
+    // Update calendar state
+    calendarState.currentDate = fullDate;
+    calendarState.selectedDate = fullDate;
+    calendarState.currentView = "day";
 
-      // Update active view button
-      updateViewButtons();
+    // Update active view button
+    updateViewButtons();
 
-      // Regenerate the calendar in Day View
-      generateCalendar();
+    // Regenerate the calendar in Day View
+    generateCalendar();
   });
 
   // Append the cell to the calendar grid
@@ -228,38 +230,38 @@ function createDayCell(day, isOtherMonth, year, month, isToday = false) {
 function addEventsToMonthView() {
   // Get all days in the current view
   const dayCells = document.querySelectorAll(".day-cell");
-  
+
   // Create a map of formatted dates to their corresponding day cells
   const dateMap = {};
-  dayCells.forEach(cell => {
+  dayCells.forEach((cell) => {
     if (cell.dataset.fullDate) {
       dateMap[cell.dataset.fullDate] = cell;
     }
   });
-  
+
   // Filter events for the visible month range
   const firstCellDate = new Date(dayCells[0].dataset.fullDate);
   const lastCellDate = new Date(dayCells[dayCells.length - 1].dataset.fullDate);
-  
-  const visibleEvents = sampleEvents.filter(event => {
+
+  const visibleEvents = sampleEvents.filter((event) => {
     const eventDate = new Date(event.date);
     return eventDate >= firstCellDate && eventDate <= lastCellDate;
   });
-  
+
   // Group events by date
   const eventsByDate = {};
-  visibleEvents.forEach(event => {
-    const dateStr = event.date.toISOString().split('T')[0];
+  visibleEvents.forEach((event) => {
+    const dateStr = event.date.toISOString().split("T")[0];
     if (!eventsByDate[dateStr]) {
       eventsByDate[dateStr] = [];
     }
     eventsByDate[dateStr].push(event);
   });
-  
+
   // Add events to date cells
   for (const [dateStr, events] of Object.entries(eventsByDate)) {
     const cell = dateMap[dateStr];
-    
+
     if (cell) {
       // Sort events by start time
       events.sort((a, b) => {
@@ -268,34 +270,44 @@ function addEventsToMonthView() {
         }
         return a.startMinute - b.startMinute;
       });
-      
+
       // Clear any existing events
-      const existingEvents = cell.querySelectorAll(".month-event, .event-indicators, .more-events");
-      existingEvents.forEach(el => el.remove());
-      
+      const existingEvents = cell.querySelectorAll(
+        ".month-event, .event-indicators, .more-events"
+      );
+      existingEvents.forEach((el) => el.remove());
+
       // Check window width for responsive design
       const isMobile = window.innerWidth <= 480;
       const isTablet = window.innerWidth <= 768 && window.innerWidth > 480;
-      
+
       // For mobile: show only dots
       if (isMobile) {
         const eventsContainer = document.createElement("div");
         eventsContainer.className = "event-indicators";
-        
-        events.forEach(event => {
+
+        events.forEach((event) => {
           const eventDot = document.createElement("div");
           eventDot.className = `event-indicator priority-${event.priority}`;
-          eventDot.title = `${event.title} (${formatHour(event.startHour)}:${String(event.startMinute).padStart(2, '0')})`;
+          eventDot.title = `${event.title} (${formatHour(
+            event.startHour
+          )}:${String(event.startMinute).padStart(2, "0")})`;
           eventDot.addEventListener("click", (e) => {
             e.stopPropagation();
-            alert(`Event: ${event.title}\nTime: ${formatHour(event.startHour)}:${String(event.startMinute).padStart(2, '0')} - ${formatHour(event.endHour)}:${String(event.endMinute).padStart(2, '0')}`);
+            alert(
+              `Event: ${event.title}\nTime: ${formatHour(
+                event.startHour
+              )}:${String(event.startMinute).padStart(2, "0")} - ${formatHour(
+                event.endHour
+              )}:${String(event.endMinute).padStart(2, "0")}`
+            );
           });
-          
+
           eventsContainer.appendChild(eventDot);
         });
-        
+
         cell.appendChild(eventsContainer);
-      } 
+      }
       // For tablet: show max 2 events + indicators
       else if (isTablet) {
         // Show first 2 events
@@ -304,28 +316,36 @@ function addEventsToMonthView() {
           const eventEl = createMonthEventElement(event);
           cell.appendChild(eventEl);
         }
-        
+
         // If more than 2 events, show indicator dots for the rest
         if (events.length > 2) {
           const eventsContainer = document.createElement("div");
           eventsContainer.className = "event-indicators";
-          
+
           for (let i = 2; i < events.length; i++) {
             const event = events[i];
             const eventDot = document.createElement("div");
             eventDot.className = `event-indicator priority-${event.priority}`;
-            eventDot.title = `${event.title} (${formatHour(event.startHour)}:${String(event.startMinute).padStart(2, '0')})`;
+            eventDot.title = `${event.title} (${formatHour(
+              event.startHour
+            )}:${String(event.startMinute).padStart(2, "0")})`;
             eventDot.addEventListener("click", (e) => {
               e.stopPropagation();
-              alert(`Event: ${event.title}\nTime: ${formatHour(event.startHour)}:${String(event.startMinute).padStart(2, '0')} - ${formatHour(event.endHour)}:${String(event.endMinute).padStart(2, '0')}`);
+              alert(
+                `Event: ${event.title}\nTime: ${formatHour(
+                  event.startHour
+                )}:${String(event.startMinute).padStart(2, "0")} - ${formatHour(
+                  event.endHour
+                )}:${String(event.endMinute).padStart(2, "0")}`
+              );
             });
-            
+
             eventsContainer.appendChild(eventDot);
           }
-          
+
           cell.appendChild(eventsContainer);
         }
-      } 
+      }
       // For desktop: show max 3 events + more indicator
       else {
         // Show first 3 events
@@ -334,7 +354,7 @@ function addEventsToMonthView() {
           const eventEl = createMonthEventElement(event);
           cell.appendChild(eventEl);
         }
-        
+
         // If more than 3 events, show "+more" text
         if (events.length > 3) {
           const moreIndicator = document.createElement("div");
@@ -342,16 +362,22 @@ function addEventsToMonthView() {
           moreIndicator.textContent = `+ ${events.length - 3} more`;
           moreIndicator.addEventListener("click", (e) => {
             e.stopPropagation();
-            
+
             // Create a message with all events
-            let message = `Events on ${new Date(dateStr).toLocaleDateString()}:\n\n`;
-            events.forEach(event => {
-              message += `• ${event.title}: ${formatHour(event.startHour)}:${String(event.startMinute).padStart(2, '0')} - ${formatHour(event.endHour)}:${String(event.endMinute).padStart(2, '0')}\n`;
+            let message = `Events on ${new Date(
+              dateStr
+            ).toLocaleDateString()}:\n\n`;
+            events.forEach((event) => {
+              message += `• ${event.title}: ${formatHour(
+                event.startHour
+              )}:${String(event.startMinute).padStart(2, "0")} - ${formatHour(
+                event.endHour
+              )}:${String(event.endMinute).padStart(2, "0")}\n`;
             });
-            
+
             alert(message);
           });
-          
+
           cell.appendChild(moreIndicator);
         }
       }
@@ -363,27 +389,37 @@ function addEventsToMonthView() {
 function createMonthEventElement(event) {
   const eventEl = document.createElement("div");
   eventEl.className = `month-event priority-${event.priority}`;
-  
+
   // Format the time
-  const startTime = `${formatHour(event.startHour).replace(' ', '')}`;
-  
+  const startTime = `${formatHour(event.startHour).replace(" ", "")}`;
+
   // Create the event title with time
   eventEl.textContent = `${startTime} ${event.title}`;
-  
+
   // Add tooltip with full details
-  eventEl.title = `${event.title}: ${formatHour(event.startHour)}:${String(event.startMinute).padStart(2, '0')} - ${formatHour(event.endHour)}:${String(event.endMinute).padStart(2, '0')}`;
-  
+  eventEl.title = `${event.title}: ${formatHour(event.startHour)}:${String(
+    event.startMinute
+  ).padStart(2, "0")} - ${formatHour(event.endHour)}:${String(
+    event.endMinute
+  ).padStart(2, "0")}`;
+
   // Add click event for viewing details
   eventEl.addEventListener("click", (e) => {
     e.stopPropagation(); // Prevent triggering cell click
-    alert(`Event: ${event.title}\nTime: ${formatHour(event.startHour)}:${String(event.startMinute).padStart(2, '0')} - ${formatHour(event.endHour)}:${String(event.endMinute).padStart(2, '0')}`);
+    alert(
+      `Event: ${event.title}\nTime: ${formatHour(event.startHour)}:${String(
+        event.startMinute
+      ).padStart(2, "0")} - ${formatHour(event.endHour)}:${String(
+        event.endMinute
+      ).padStart(2, "0")}`
+    );
   });
-  
+
   return eventEl;
 }
 
 // Update the window resize listener
-window.addEventListener('resize', function() {
+window.addEventListener("resize", function () {
   // Regenerate the calendar to update event display
   generateCalendar();
 });
@@ -470,7 +506,7 @@ function generateWeekView() {
     dayHeader.appendChild(dayName);
     dayHeader.appendChild(dayNumber);
     dayColumn.appendChild(dayHeader);
-    
+
     // Add date attribute to column
     dayColumn.dataset.date = formatDateAttribute(dayDate);
 
@@ -501,7 +537,11 @@ function generateWeekView() {
       cell.addEventListener("click", () => {
         // Here you would open a modal to create a new event
         // For now, we'll just show an alert
-        alert(`Create a new event on ${dayDate.toLocaleDateString()} at ${formatHour(hour)}`);
+        alert(
+          `Create a new event on ${dayDate.toLocaleDateString()} at ${formatHour(
+            hour
+          )}`
+        );
       });
 
       dayColumn.appendChild(cell);
@@ -537,48 +577,53 @@ function addEventsToWeekView() {
     const eventDay = event.date.getDay(); // 0-6
     const dayColumns = document.querySelectorAll(".week-day-column");
     const dayColumn = dayColumns[eventDay];
-    
+
     if (!dayColumn) return; // Skip if column not found
-    
+
     // Calculate position and height
     const startHour = event.startHour;
     const startMin = event.startMinute;
     const endHour = event.endHour;
     const endMin = event.endMinute;
-    
+
     // Get the first hour cell as reference (6am is the first hour in our grid)
     const hourCells = dayColumn.querySelectorAll(".week-time-cell");
     const firstCellIndex = startHour - 6; // Adjust for 6am start
-    
+
     if (firstCellIndex < 0 || firstCellIndex >= hourCells.length) return; // Out of range
-    
+
     const cell = hourCells[firstCellIndex];
-    
+
     // Create event element
     const eventEl = document.createElement("div");
     eventEl.className = `calendar-event priority-${event.priority}`;
     eventEl.textContent = event.title;
-    
+
     // Calculate top position based on minutes (60px per hour)
     const topPos = (startMin / 60) * 60; // Convert minutes to pixels
-    
+
     // Calculate height based on duration (60px per hour)
-    const durationHours = (endHour - startHour) + ((endMin - startMin) / 60);
+    const durationHours = endHour - startHour + (endMin - startMin) / 60;
     const height = durationHours * 60; // Convert hours to pixels
-    
+
     // Set position and dimensions
     eventEl.style.top = `${topPos}px`;
     eventEl.style.height = `${height}px`;
-    
+
     // Add click event for editing
     eventEl.addEventListener("click", (e) => {
       e.stopPropagation(); // Prevent triggering cell click
       alert(`Edit event: ${event.title}`);
     });
-    
+
     // Add tooltip with time information
-    eventEl.title = `${event.title}: ${formatHour(startHour)}:${String(startMin).padStart(2, '0')} - ${formatHour(endHour)}:${String(endMin).padStart(2, '0')}`;
-    
+    eventEl.title = `${event.title}: ${formatHour(startHour)}:${String(
+      startMin
+    ).padStart(2, "0")} - ${formatHour(endHour)}:${String(endMin).padStart(
+      2,
+      "0"
+    )}`;
+
     // Add to the cell
     cell.appendChild(eventEl);
   });
@@ -593,12 +638,15 @@ function generateDayView() {
   calendarGrid.innerHTML = "";
 
   // Update calendar title
-  calendarTitle.textContent = calendarState.currentDate.toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-    year: "numeric"
-  });
+  calendarTitle.textContent = calendarState.currentDate.toLocaleDateString(
+    "en-US",
+    {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    }
+  );
 
   // Create time column
   const timeColumn = document.createElement("div");
@@ -627,11 +675,14 @@ function generateDayView() {
   // Create day header
   const dayHeader = document.createElement("div");
   dayHeader.className = "day-view-header";
-  dayHeader.textContent = calendarState.currentDate.toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "short",
-    day: "numeric"
-  });
+  dayHeader.textContent = calendarState.currentDate.toLocaleDateString(
+    "en-US",
+    {
+      weekday: "long",
+      month: "short",
+      day: "numeric",
+    }
+  );
   dayColumn.appendChild(dayHeader);
 
   // Add date attribute to column
@@ -666,7 +717,11 @@ function generateDayView() {
     // Add click event for creating new events
     cell.addEventListener("click", () => {
       // Here you would open a modal to create a new event
-      alert(`Create a new event on ${calendarState.currentDate.toLocaleDateString()} at ${formatHour(hour)}`);
+      alert(
+        `Create a new event on ${calendarState.currentDate.toLocaleDateString()} at ${formatHour(
+          hour
+        )}`
+      );
     });
 
     dayColumn.appendChild(cell);
@@ -696,40 +751,45 @@ function addEventsToDayView() {
     const startMin = event.startMinute;
     const endHour = event.endHour;
     const endMin = event.endMinute;
-    
+
     // Get the first hour cell as reference (6am is the first hour in our grid)
     const hourCells = dayColumn.querySelectorAll(".day-time-cell");
     const firstCellIndex = startHour - 6; // Adjust for 6am start
-    
+
     if (firstCellIndex < 0 || firstCellIndex >= hourCells.length) return; // Out of range
-    
+
     const cell = hourCells[firstCellIndex];
-    
+
     // Create event element
     const eventEl = document.createElement("div");
     eventEl.className = `calendar-event priority-${event.priority}`;
     eventEl.textContent = event.title;
-    
+
     // Calculate top position based on minutes (60px per hour)
     const topPos = (startMin / 60) * 60; // Convert minutes to pixels
-    
+
     // Calculate height based on duration (60px per hour)
-    const durationHours = (endHour - startHour) + ((endMin - startMin) / 60);
+    const durationHours = endHour - startHour + (endMin - startMin) / 60;
     const height = durationHours * 60; // Convert hours to pixels
-    
+
     // Set position and dimensions
     eventEl.style.top = `${topPos}px`;
     eventEl.style.height = `${height}px`;
-    
+
     // Add click event for editing
     eventEl.addEventListener("click", (e) => {
       e.stopPropagation(); // Prevent triggering cell click
       alert(`Edit event: ${event.title}`);
     });
-    
+
     // Add tooltip with time information
-    eventEl.title = `${event.title}: ${formatHour(startHour)}:${String(startMin).padStart(2, '0')} - ${formatHour(endHour)}:${String(endMin).padStart(2, '0')}`;
-    
+    eventEl.title = `${event.title}: ${formatHour(startHour)}:${String(
+      startMin
+    ).padStart(2, "0")} - ${formatHour(endHour)}:${String(endMin).padStart(
+      2,
+      "0"
+    )}`;
+
     // Add to the cell
     cell.appendChild(eventEl);
   });
@@ -761,17 +821,17 @@ function setupEventListeners() {
 // Setup view buttons as a separate function
 function setupViewButtons() {
   viewButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-          // Remove active class from all buttons
-          viewButtons.forEach(btn => btn.classList.remove("active"));
-          
-          // Add active class to clicked button
-          button.classList.add("active");
+    button.addEventListener("click", () => {
+      // Remove active class from all buttons
+      viewButtons.forEach((btn) => btn.classList.remove("active"));
 
-          // Update the calendar view
-          calendarState.currentView = button.textContent.toLowerCase();
-          generateCalendar();
-      });
+      // Add active class to clicked button
+      button.classList.add("active");
+
+      // Update the calendar view
+      calendarState.currentView = button.textContent.toLowerCase();
+      generateCalendar();
+    });
   });
 
   // Ensure the correct button is active
@@ -793,7 +853,7 @@ function updateViewButtons() {
 // Navigate calendar (previous/next)
 function navigateCalendar(direction) {
   const date = calendarState.currentDate;
-  
+
   if (calendarState.currentView === "month") {
     // Navigate by month
     if (direction === "prev") {
@@ -817,7 +877,7 @@ function navigateCalendar(direction) {
       date.setDate(date.getDate() + 1);
     }
   }
-  
+
   calendarState.currentDate = new Date(date);
   generateCalendar();
 }
@@ -831,7 +891,7 @@ function formatHour(hour) {
 
 // Format date for data attributes
 function formatDateAttribute(date) {
-  return date.toISOString().split('T')[0];
+  return date.toISOString().split("T")[0];
 }
 
 // Check if two dates are the same day
@@ -844,7 +904,7 @@ function isSameDay(date1, date2) {
 }
 
 // Initialize calendar on page load
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   console.log("Calendar initializing...");
   initCalendar();
 });

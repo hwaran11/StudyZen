@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/dashboard.css" />
+    <link rel="stylesheet" href="/assets/css/sidebar.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Font Awesome CSS -->
+    <script
+      src="https://kit.fontawesome.com/a780dab40f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Lucide CDN links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.iife.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        lucide.createIcons();
+      });
+    </script>
+
+    <!-- Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Sidebar placeholder -->
+    <aside id="sidebar" class="sidebar">
+      <!-- Sidebar content will be injected here -->
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="dashboard-container">
+        <div class="greeting-container">
+          <div class="greeting-main">
+            <div class="greeting-content">
+              <div class="user-greeting">
+                <div class="user-name-container">
+                  <h1>Good Morning, Alex Johnson</h1>
+                </div>
+                <p>
+                  Your productivity journey continues today with incredible
+                  potential
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Dashboard Grid Layout -->
+        <div class="dashboard-grid">
+          <!-- Top Row: Recommendations and Calendar -->
+          <section class="grid-section top-row">
+            <!-- Study Recommendations Widget -->
+            <div class="widget study-recommendations">
+              <header class="widget-header">
+                <h2 class="widget-title">Recommended for You</h2>
+              </header>
+
+              <div class="recommendations-container">
+                <!-- Study Partner Card -->
+                <div class="recommendation-section">
+                  <h3 class="section-label">Study Partner</h3>
+                  <div class="recommendation-card">
+                    <div class="card-header">
+                      <div class="card-info">
+                        <h4 class="card-title">Sofea</h4>
+                        <p class="card-subtitle">Computer Science</p>
+                        <div class="match-label profile">95% Match</div>
+                      </div>
+                    </div>
+                    <a
+                      href="#"
+                      class="view-profile-button view-profile-btn"
+                      data-profile-id="1"
+                    >
+                      View Profile
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Study Group Card -->
+                <div class="recommendation-section">
+                  <h3 class="section-label">Study Group</h3>
+                  <div class="recommendation-card study-group">
+                    <div class="card-header">
+                      <div class="card-info">
+                        <h4 class="card-title">Engineering Fundamentals</h4>
+                        <p class="card-subtitle">
+                          Collaborative study sessions covering essential
+                          concepts across engineering disciplines
+                        </p>
+                        <div class="match-label profile">85% Match</div>
+                      </div>
+                    </div>
+                    <div class="group-tags">
+                      <span class="group-tag tag-category"
+                        >General Study Sessions</span
+                      >
+                      <span class="group-tag tag-status">Public</span>
+                      <span class="group-tag tag-members">
+                        <i class="ri-user-line"></i> 12 Members
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <footer class="widget-footer">
+                <a href="#" class="cta-button">Find More Matches</a>
+              </footer>
+            </div>
+
+            <!-- Calendar Widget -->
+            <div class="widget calendar-widget">
+              <div class="calendar-container">
+                <header class="calendar-header">
+                  <button
+                    id="prev-month"
+                    class="nav-button"
+                    aria-label="Previous Month"
+                  >
+                    &#9664;
+                  </button>
+                  <h2 id="month-year">March 2025</h2>
+                  <button
+                    id="next-month"
+                    class="nav-button"
+                    aria-label="Next Month"
+                  >
+                    &#9654;
+                  </button>
+                </header>
+
+                <div class="calendar-body">
+                  <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                  </div>
+
+                  <div id="calendar-days" class="days">
+                    <!-- Days will be inserted here by JavaScript -->
+                  </div>
+                </div>
+
+                <footer class="calendar-footer">
+                  <span id="selected-date">Today: March 10, 2025</span>
+                </footer>
+              </div>
+            </div>
+          </section>
+
+          <section class="grid-section middle-row">
+            <!-- Daily Planner Stats Widget -->
+            <div class="widget planner-stats">
+              <header class="widget-header">
+                <h2 class="widget-title">Daily Planner Stats</h2>
+              </header>
+
+              <div class="stats-container">
+                <!-- Task Progress Section -->
+                <div class="stat-section progress-section">
+                  <h3 class="section-label">Task Progress</h3>
+                  <div class="progress-container">
+                    <canvas id="taskProgressChart"></canvas>
+                    <div class="progress-label">
+                      <span class="progress-percentage">60%</span>
+                      <span class="progress-text">Completed</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tasks Counter Section -->
+                <div class="stat-section counter-section">
+                  <h3 class="section-label">Tasks</h3>
+                  <div class="counter-container">
+                    <div class="task-count">
+                      <span class="count-completed">3</span>
+                      <span class="count-separator">/</span>
+                      <span class="count-total">5</span>
+                    </div>
+                    <div class="count-label">Tasks Completed</div>
+                  </div>
+                </div>
+
+                <!-- Productivity Streak Section -->
+                <div class="stat-section streak-section">
+                  <h3 class="section-label">Productivity Streak</h3>
+                  <div class="streak-container">
+                    <div class="streak-content">
+                      <div class="streak-icon">🔥</div>
+                      <div class="streak-info">
+                        <span class="streak-count">4</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <footer class="widget-footer">
+                <a href="/daily-planner.html" class="cta-button"
+                  >View Planner</a
+                >
+              </footer>
+            </div>
+
+            <!-- Mindfulness Insights Widget -->
+            <div class="widget mindfulness-insights">
+              <header class="widget-header">
+                <h2 class="widget-title">Mindfulness Insights</h2>
+              </header>
+
+              <div class="stats-container">
+                <!-- Focus Time Section -->
+                <div class="stat-section focus-section">
+                  <h3 class="section-label">Focus Time Today</h3>
+                  <div class="counter-container mindfulness-container">
+                    <div class="focus-time">
+                      <span class="focus-count">75</span>
+                      <span class="focus-unit">min</span>
+                    </div>
+                    <div class="count-label">of focus today</div>
+                  </div>
+                </div>
+
+                <!-- Mindfulness Streak Section -->
+                <div class="stat-section streak-section">
+                  <h3 class="section-label">Mindfulness Streak</h3>
+                  <div class="streak-container">
+                    <div class="streak-content">
+                      <div class="streak-icon">🔥</div>
+                      <div class="streak-info">
+                        <span class="streak-count">4</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Meditation Sessions Section -->
+                <div class="stat-section sessions-section">
+                  <h3 class="section-label">Meditation Sessions</h3>
+                  <div class="counter-container mindfulness-container">
+                    <div class="session-count">
+                      <span class="count-completed">1</span>
+                    </div>
+                    <div class="count-label">session today</div>
+                  </div>
+                </div>
+              </div>
+
+              <footer class="widget-footer">
+                <a href="/mindfulness.html" class="cta-button">Start Session</a>
+              </footer>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="modal-overlay" id="profileModal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+
+          <!-- Content will be dynamically inserted here -->
+          <div class="modal-body"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/assets/js/dashboard.js"></script>
+    <script src="/assets/js/sidebar.js"></script>
+  </body>
+</html>

@@ -3,99 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Groups Browser</title>
+    <title>Study Groups</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/study-group.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/sidebar.css">
+
     <!--Font Awesome CSS -->
     <script src="https://kit.fontawesome.com/a780dab40f.js" crossorigin="anonymous"></script>
+
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
-    <!-- Sidebar -->
-    <!-- Sidebar -->
+
+    <!-- Sidebar placeholder -->
     <aside id="sidebar" class="sidebar">
-        <div class="sidebar-toggle" onclick="toggleSidebar()">
-        </div>
-    
-        <div id="logo-container" class="logo-container">
-            <a href="#" class="logo">StudyZen</a>
-        </div>
-    
-        <div id="user-profile" class="user-profile">
-            <div class="profile-content">
-                <div class="profile-icon">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <div class="profile-details">
-                    <p class="profile-name">Alex Johnson</p>
-                    <p class="profile-role"></p>
-                </div>
-            </div>
-        </div>
-    
-        <nav class="sidebar-nav">
-            <ul id="nav-list">
-                <li>
-                    <a href="#" class="nav-item" style="--item-index: 1;">
-                        <i class="fa-solid fa-chart-simple"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-item active" style="--item-index: 2;">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <span>Study Groups</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-item" style="--item-index: 3;">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <span>Daily Planner</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-item" style="--item-index: 4;">
-                        <i class="fa-solid fa-calendar"></i>
-                        <span>Calendar</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-item" style="--item-index: 5;">
-                        <i class="fa-solid fa-spa"></i>
-                        <span>Mindfulness</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    
-        <div class="sidebar-footer">
-            <div class="user-status">
-                <div class="status-indicator">
-                    <div class="status-dot"></div>
-                    <span class="status-text">Online</span>
-                </div>
-                <div class="quick-actions">
-                    <button class="action-btn" data-tooltip="Notifications">
-                        <i class="fa-solid fa-bell"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="footer-actions">
-                <button class="footer-btn settings-btn" data-tooltip="Settings">
-                    <i class="fa-solid fa-gear"></i>
-                    <span>Settings</span>
-                </button>
-                <button class="footer-btn logout-btn" data-tooltip="Logout">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <span>Logout</span>
-                </button>
-            </div>
-            <p class="help-text">Need help? <a href="#">Contact support</a></p>
-        </div>
+        <!-- Sidebar content will be injected here -->
     </aside>
 
     <main class="content">
@@ -111,29 +41,17 @@
                     </div>
                 </div>
 
-                <div class="quick-actions-grid">
+                <div class="quick-actions-grid">      
                     <div class="action-card">
-                        <i class="fa-solid fa-plus-circle"></i>
-                        <h3>Create Group</h3>
-                        <p>Start your own study group</p>
-                    </div>
-                    
-                    <div class="action-card">
-                        <i class="fa-solid fa-filter"></i>
+                        <i class="ri-search-line"></i>
                         <h3>Find Study Groups</h3>
                         <p>Browse by category</p>
                     </div>
 
                     <div class="action-card">
-                        <i class="fa-solid fa-filter"></i>
+                        <i class="ri-search-line"></i>
                         <h3>Find Study Partners</h3>
                         <p>Browse by your needs</p>
-                    </div>
-                    
-                    <div class="action-card">
-                        <i class="fa-solid fa-bell"></i>
-                        <h3>Notifications</h3>
-                        <p>2 new requests</p>
                     </div>
                 </div>
             </header>
@@ -153,6 +71,7 @@
                         <div class="profile-info">
                             <h2 class="profile-name">Sofea</h2>
                             <p class="profile-role">Computer Science</p>
+                            <p class="match-label">95% Match</p>
                         </div>
                     </div>
                     
@@ -168,6 +87,7 @@
                         <div class="profile-info">
                             <h2 class="profile-name">Aisha Rahman</h2>
                             <p class="profile-role">Petroleum Engineering</p>
+                            <p class="match-label">82% Match</p>
                         </div>
                     </div>
                     
@@ -182,6 +102,7 @@
                         <div class="profile-info">
                             <h2 class="profile-name">Faizal Aziz</h2>
                             <p class="profile-role">Chemical Engineering</p>
+                            <p class="match-label">77% Match</p>
                         </div>
                     </div>
                     
@@ -204,7 +125,6 @@
             
     
             <!-- Recommended Study Groups Section -->
-            <!-- Recommended Study Groups Section -->
             <section class="recommendations-section">
                 <h2>
                     <img src="/public/ai.png" alt="ai" class="ai-icon">
@@ -212,64 +132,48 @@
                 </h2>
                 <div class="recommendations-container">
                     <!-- Study Group Card - General Study Example -->
-                    <div class="study-card">
-                        <div class="card-banner">
-                            <span class="card-category category-general">General Study Sessions</span>
+                    <div class="recommendation-card study-group">
+                        <div class="card-header">
+                          <div class="card-info">
+                            <h4 class="card-title">Engineering Fundamentals</h4>
+                            <p class="card-subtitle">
+                              Collaborative study sessions covering essential
+                              concepts across engineering disciplines
+                            </p>
+                            <div class="match-label profile">85% Match</div>
+                          </div>
                         </div>
-                        
-                        <div class="card-content">
-                            <div class="card-title-row">
-                                <h3 class="card-title">Engineering Fundamentals</h3>
-                                <span class="privacy-indicator privacy-public">Public</span>
-                            </div>
-                            
-                            <p class="card-preview">Collaborative study sessions covering essential concepts across engineering disciplines</p>
-
-                            <p class="group-leader">Group Leader : Ahmad Faris</p>
-                            
-                            <div class="member-section">
-                                <div class="member-indicator">
-                                    <div class="member-count">
-                                        6/12
-                                    </div>
-                                    <div class="availability-indicator">
-                                        <div class="availability-bar availability-medium"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <button class="join-button">Join Group</button>
+                        <div class="group-tags">
+                          <span class="group-tag tag-category">General Study Sessions</span>
+                          <span class="group-tag tag-status">Public</span>
+                          <span class="group-tag tag-members">
+                            <i class="ri-user-line"></i> 12 Members
+                            </span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="view-profile-btn">Join</button>
                         </div>
                     </div>
-                    
-                    <!-- Study Group Card - Exam Prep Example -->
-                    <div class="study-card">
-                        <div class="card-banner">
-                            <span class="card-category category-exam">Exam Preparation</span>
-                        </div>
-                        
-                        <div class="card-content">
-                            <div class="card-title-row">
-                                <h3 class="card-title">Finals Preparation</h3>
-                                <span class="privacy-indicator privacy-private">Private</span>
-                            </div>
-                            
-                            <p class="card-preview">Intensive study group focusing on exam strategies and practice problems for upcoming finals</p>
 
-                            <p class="group-leader">Group Leader : Sarah Tan</p>
-                            
-                            <div class="member-section">
-                                <div class="member-indicator">
-                                    <div class="member-count">
-                                        4/8
-                                    </div>
-                                    <div class="availability-indicator">
-                                        <div class="availability-bar availability-medium"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <button class="join-button request-button">Request to Join</button>
+                    <div class="recommendation-card study-group">
+                        <div class="card-header">
+                          <div class="card-info">
+                            <h4 class="card-title">Finals Preparation</h4>
+                            <p class="card-subtitle">
+                                Intensive study group focusing on exam strategies and practice problems for upcoming finals
+                            </p>
+                            <div class="match-label profile">75% Match</div>
+                          </div>
+                        </div>
+                        <div class="group-tags">
+                          <span class="group-tag tag-category">Exam Preparation</span>
+                          <span class="group-tag tag-status">Private</span>
+                          <span class="group-tag tag-members">
+                            <i class="ri-user-line"></i> 4 Members
+                            </span>
+                        </div>
+                        <div class="card-footer">
+                            <button class="view-profile-btn">Join</button>
                         </div>
                     </div>
                 </div>
@@ -278,5 +182,6 @@
     </main>
 
     <script src="/assets/js/study-group.js"></script>
+    <script src="/assets/js/sidebar.js"></script>
 </body>
 </html>
