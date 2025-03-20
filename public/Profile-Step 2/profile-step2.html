@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Setup - Step 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Academic Information</h2>
+    
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-partners" style="width: 20%;"></div>
+      </div>
+      <span class="progress-label">Study Partners Setup</span>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-groups" style="width: 0%;"></div>
+      </div>
+      <span class="progress-label">Study Group Setup</span>
+    </div>
+
+    <form id="profileForm2">
+      <label for="university">University:</label>
+      <div id="university" class="tags-container">
+        <div class="tag" onclick="toggleSingleTag(this)" data-value="University Technology Petronas">University Technology Petronas</div>
+      </div>
+      
+      <label for="program">Select Program Name:</label>
+      <div id="program" class="tags-container">
+        <div class="tag" onclick="toggleSingleTag(this)" data-value="Chemical Engineering">Chemical Engineering</div>
+        <div class="tag" onclick="toggleSingleTag(this)" data-value="Civil Engineering">Civil Engineering</div>
+        <div class="tag" onclick="toggleSingleTag(this)" data-value="Computer Engineering">Computer Engineering</div>
+        <div class="tag" onclick="toggleSingleTag(this)" data-value="Electrical Engineering">Electrical Engineering</div>
+        <div class="tag" onclick="toggleSingleTag(this)" data-value="Computer Science">Computer Science</div>
+        <div class="tag" onclick="toggleSingleTag(this)" data-value="Information Technology">Information Technology</div>
+      </div>
+
+      <label for="semester" id="semester-label" style="display:none;">Select Current Semester:</label>
+      <div id="semester" class="tags-container" style="display:none;">
+        <!-- Semester options will be populated dynamically based on the selected program -->
+      </div>
+
+      <!-- Removed schedule-container and other related elements -->
+
+      <div class="button-container">
+        <button type="submit">Next</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+  <script src="./scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Group Setup - Step 4</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Study Group Setup</h2>
+    
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-partners" style="width: 100%;"></div>
+      </div>
+      <span class="progress-label">Study Partner Setup</span>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-groups" style="width: 50%;"></div>
+      </div>
+      <span class="progress-label">Study Group Setup</span>
+    </div>
+
+    <form id="groupForm4">
+      <label for="session-length">Preferred Study Session Length:</label>
+      <div id="session-length" class="tags-container">
+        <div class="tag" onclick="toggleTag(this)" data-value="Short (30-60 minutes)">Short (30-60 minutes)</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Medium (1-2 hours)">Medium (1-2 hours)</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Long (2+ hours)">Long (2+ hours)</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Mixed (varying session lengths)">Mixed (varying session lengths)</div>
+      </div>
+
+      <div class="button-container">
+        <button type="button" id="prev-button" onclick="navigateToPrevious()">Previous</button>
+        <button type="submit" id="next-button" disabled>Next</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>

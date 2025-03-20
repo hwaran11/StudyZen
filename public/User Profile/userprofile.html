@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyZen - User Profile</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <img src="./public/studyzen-logo-4-1@2x.png" alt="StudyZen Logo" class="sidebar-logo">
+            <nav class="sidebar-menu">
+                <a href="../Dashboard/dashboard.html" class="sidebar-item">Dashboard</a>
+                <a href="../Join Study Group/joinstudygroup.html" class="sidebar-item">Study Groups</a>
+                <a href="../Daily Planner 2/daily2.html" class="sidebar-item">Daily Planner</a>
+                <a href="../Calendar-Daily/calendar-daily.html" class="sidebar-item">Calendar</a>
+                <a href="../Mindfulness/mindfulness.html" class="sidebar-item">Mindfulness</a>
+            </nav>
+            <div class="sidebar-profile">
+                <img src="https://via.placeholder.com/50" alt="User Avatar" class="sidebar-avatar">
+                <div id="userProfileDropdown" class="sidebar-user-info">
+                    <span id="sidebarUsername" class="sidebar-username">Jane Doe</span>
+                    <div class="dropdown-content">
+                        <a href="../User Profile/userprofile.html">User Profile</a>
+                        <a href="#" id="logout">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div class="main-content-wrapper">
+            <div class="main-content" role="main">
+                <div class="top-bar">
+                    <h1>My Profile</h1>
+                </div>
+                <div id="user-profile" class="profile-content">
+                    <!-- User profile will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

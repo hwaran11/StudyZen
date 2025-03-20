@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Source Sans Pro:wght@400;700;900");
+@import url("https://api.fontshare.com/css?f[]=source sans pro@400,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800");
+@import url("https://api.fontshare.com/css?f[]=montserrat@400,800&display=swap");
+
+p,
+ol,
+ul {
+  margin: 0px;
+}
+
+button {
+  padding: 0px;
+}
+
+ol,
+ul {
+  padding-inline-start: 1.5em;
+}
+
+input {
+  background-image: none;
+  background-color: transparent;
+}
+
+.sign-up-page-sign-up-page {
+  width: 100%;
+  padding-top: 324px;
+  padding-right: 616px;
+  padding-left: 616px;
+  padding-bottom: 213px;
+  background-color: rgba(255, 251, 234, 1);
+  line-height: normal;
+  text-align: center;
+  letter-spacing: 0em;
+}
+
+.sign-up-page-check {
+  height: 84px;
+  width: 84px;
+  margin-left: 300px;
+  object-position: center;
+  object-fit: cover;
+}
+
+.sign-up-page-t-success-taccount-secured-successfully-tbg-rectangle-21continue-to-login {
+  width: 688px;
+  padding-top: 13px;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.sign-up-page-success {
+  width: 538px;
+  font-family: Source Sans Pro;
+  font-size: 84px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.sign-up-page-account-secured-successfully {
+  align-self: stretch;
+  justify-content: center;
+  display: flex;
+  font-weight: 700;
+  font-size: 32px;
+  font-family: Source Sans Pro;
+}
+
+.sign-up-page-t-bg-rectangle-21continue-to-login {
+  display: flex;
+  position: relative;
+  z-index: 0;
+  justify-content: center;
+  margin-top: 50px;
+  padding-bottom: 24px;
+  align-self: stretch;
+}
+
+.sign-up-page-wrapper {
+  flex-shrink: 0;
+  position: absolute;
+  top: -23px;
+  right: 65px;
+  left: 65px;
+  z-index: 0;
+  height: 73px;
+  width: 558px;
+}
+
+.sign-up-page-bg-rectangle {
+  position: absolute;
+  left: 4.5e-15px;
+  top: 73px;
+  height: 558px;
+  width: 73px;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  background-color: rgba(168, 218, 220, 1);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+}
+
+.sign-up-page-continue-to-login {
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.sign-up-page-para-1 {
+  width: 688px;
+  padding-top: 21px;
+  padding-right: 65px;
+  padding-left: 65px;
+  font-weight: 700;
+  font-size: 32px;
+  font-family: Source Sans Pro;
+}
+
+.sign-up-page-tt-bg-rectangle-21back-to-home {
+  display: flex;
+  justify-content: center;
+  padding-right: 65px;
+  padding-left: 65px;
+  margin-top: 20px;
+  width: 688px;
+}
+
+.sign-up-page-t-bg-rectangle-21back-to-home {
+  display: flex;
+  position: relative;
+  z-index: 0;
+  justify-content: center;
+  padding-top: 23px;
+  padding-right: 23px;
+  padding-left: 23px;
+  padding-bottom: 24px;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.sign-up-page-wrapper-1 {
+  flex-shrink: 0;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  z-index: 0;
+  height: 73px;
+  width: 558px;
+}
+
+.sign-up-page-bg-rectangle-1 {
+  position: absolute;
+  left: 4.5e-15px;
+  top: 73px;
+  height: 558px;
+  width: 73px;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  background-color: rgba(0, 0, 0, 1);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+}
+
+.sign-up-page-back-to-home {
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-grow: 1;
+  font-family: Montserrat;
+  font-size: 24px;
+  color: rgba(196, 196, 196, 1);
+  font-weight: 800;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join a Study Group - StudyZen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="join-study-group-page">
+    <aside class="sidebar">
+        <img src="./public/studyzen-logo-4-1@2x.png" alt="StudyZen Logo" class="sidebar-logo">
+        <nav class="sidebar-menu">
+            <a href="../Dashboard/dashboard.html" class="sidebar-item">Dashboard</a>
+            <a href="../Join Study Group/joinstudygroup.html" class="sidebar-item active">Study Groups</a>
+            <a href="../Daily Planner 2/daily2.html" class="sidebar-item">Daily Planner</a>
+            <a href="../Calendar-Daily/calendar-daily.html" class="sidebar-item">Calendar</a>
+            <a href="../Mindfulness/mindfulness.html" class="sidebar-item">Mindfulness</a>
+        </nav>
+        <div class="sidebar-profile">
+            <img src="https://via.placeholder.com/50" alt="User Avatar" class="sidebar-avatar">
+            <div id="userProfileDropdown" class="sidebar-user-info">
+                <span id="sidebarUsername" class="sidebar-username">Jane Doe</span>
+                <div class="dropdown-content">
+                    <a href="../User Profile/userprofile.html">User Profile</a>
+                    <a href="#" id="logout">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="main-header">
+            <div class="server-join-card">
+                <h2>Join Our Study Group Server</h2>
+                <button class="join-server-button" onclick="joinStudyGroupServer()">Join Server</button>
+            </div>
+            <div class="notification-bell" onclick="toggleNotificationDropdown()">
+                <i class="fas fa-bell"></i>
+                <div class="notification-dropdown" id="notification-dropdown">
+                    <!-- Notifications will be dynamically inserted here -->
+                </div>
+            </div>
+        </header>
+
+        <h1>Join a Study Group</h1>
+
+        <section class="group-sections">
+            <div class="section-container">
+                <h2 class="section-heading">Matched Study Partners</h2>
+                <section id="matched-partners-list" aria-label="Matched Study Partners">
+                    <!-- Matched partner cards will be dynamically inserted here -->
+                </section>
+            </div>
+
+            <div class="section-container">
+                <div class="top-right-container">
+                    <h2 class="section-heading">Recommended Study Groups</h2>
+                    <div class="action-buttons">
+                        <button class="action-button create-group-button" onclick="createNewGroup()">Create New Group</button>
+                        <button class="action-button view-all-button" onclick="viewAllGroups()">View All Study Groups</button>
+                    </div>
+                </div>
+
+                <section id="recommended-group-list" aria-label="Recommended Study Groups">
+                    <!-- Recommended group cards will be dynamically inserted here -->
+                </section>
+
+                <section id="all-group-list" aria-label="All Study Groups">
+                    <!-- All group cards will be dynamically inserted here -->
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <aside class="right-sidebar">
+        <h2 class="section-heading">Connected Users</h2>
+        <ul id="connected-user-list" class="user-list">
+            <!-- Connected user list items will be dynamically inserted here -->
+        </ul>
+        <p id="no-connected-users" class="no-users-message">No connected users found.</p>
+        <h2 class="section-heading">Users</h2>
+        <ul id="user-list" class="user-list">
+            <!-- User list items will be dynamically inserted here -->
+        </ul>
+    </aside>
+
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-user-details">
+                <!-- User details will be dynamically inserted here -->
+            </div>
+            <button id="modal-connect-btn" class="connect-btn">Connect</button>
+        </div>
+    </div>
+
+    <div id="discordModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Join Discord Channel</h2>
+            <p id="discordChannelId"></p>
+            <button id="copy-discord-id" class="copy-btn" onclick="copyToClipboard()">Copy Channel ID</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

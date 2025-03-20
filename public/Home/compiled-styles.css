@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600");
+@import url("https://api.fontshare.com/css?f[]=poppins@400,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700");
+@import url("https://api.fontshare.com/css?f[]=montserrat@400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yeseva One:wght@400");
+@import url("https://api.fontshare.com/css?f[]=yeseva one@400&display=swap");
+
+p,
+ol,
+ul {
+  margin: 0px;
+}
+
+button {
+  padding: 0px;
+}
+
+ol,
+ul {
+  padding-inline-start: 1.5em;
+}
+
+input {
+  background-image: none;
+  background-color: transparent;
+}
+
+.homepage-wrapper {
+  width: 100%;
+  display: flex;
+  z-index: 0;
+}
+
+.homepage-homepage-0 {
+  flex-shrink: 0;
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-top: 1080px;
+  padding-left: 1920px;
+  background-color: rgba(255, 255, 255, 1);
+  overflow: clip;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: 0em;
+}
+
+.homepage-rectangle-8 {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 0;
+  justify-content: flex-end;
+  padding-top: 32px;
+  padding-right: 64px;
+  padding-left: 1427px;
+  padding-bottom: 32px;
+  height: 133px;
+  background-color: rgba(31, 32, 65, 1);
+  align-items: center;
+}
+
+.homepage-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 45px; /* Adjusted from column-gap/row-gap to gap */
+  flex-wrap: wrap;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: Poppins;
+  color: rgba(255, 255, 255, 1);
+  padding-bottom: 5px;
+}
+
+.homepage-rectangle, .homepage-rectangle-7 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 38px; /* Adjusted padding for both buttons */
+  background-color: rgba(0, 168, 150, 1); /* Green color for Login */
+  border: none; /* Remove border from buttons */
+}
+
+.homepage-rectangle-7 {
+  background-color: rgba(0, 92, 151, 1); /* Blue color for Sign Up */
+}
+
+.homepage-login, .homepage-get-started {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  width: 100%; /* Ensure links take full button width */
+}
+
+
+.homepage-rectangle-10 {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  z-index: 1;
+  justify-content: center;
+  padding-top: 413px;
+  padding-right: 128px;
+  padding-left: 100px;
+  padding-bottom: 165px;
+  height: 947px;
+  background: linear-gradient(45deg, #ebedff, #f3f2f8, #dbf8ff);
+  align-items: center;
+}
+
+.homepage-join-the-studyzen-community-today-and-take-your-studying-to-the-next-level {
+  z-index: 3;
+  align-self: stretch;
+  flex-grow: 1;
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.homepage-achieve-academic-excellence-with-studyzen-your-all-in-one-study-companion {
+  display: flex;
+  position: absolute;
+  top: calc(50% + -184.5px + -88px);
+  right: 64px;
+  left: 94px;
+  z-index: 2;
+  justify-content: center;
+  height: 369px;
+  font-size: 72px;
+}
+
+.homepage-text-3 {
+  font-weight: 700;
+  font-family: Montserrat;
+}
+
+.homepage-text-4 {
+  font-weight: 700;
+  font-family: Montserrat;
+}
+
+.homepage-text-5 {
+  font-weight: 600;
+  font-family: Montserrat;
+}
+
+.homepage-text-6 {
+  color: rgba(31, 32, 65, 1);
+  font-family: Yeseva One;
+}
+
+.homepage-t-rectangle-9 {
+  flex-shrink: 0;
+  display: flex;
+  z-index: 1;
+  width: 0px;
+}
+
+.homepage-rectangle-9 {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 17px;
+  padding-right: 17px;
+  padding-left: 17px;
+  padding-bottom: 17px;
+  width: 192px;
+  background-color: rgba(31, 32, 65, 1);
+  margin-left: -942px;
+  align-items: center;
+}
+
+.homepage-get-started-0 {
+  flex-grow: 1;
+  font-family: Poppins;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 600;
+  text-align: center;
+}
+
+.homepage-study-zen-logo-31 {
+  flex-shrink: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  height: 160px;
+  width: 343px;
+  max-height: 100%;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-position: 0px -38.4px;
+  background-size: 100% 120%;
+  background-image: url(public/assets/study-zen-logo-31.png);
+}
+@media (min-width: 1910px) {
+  .homepage-t-rectangle-8rectangle-7 {
+    flex-wrap: nowrap;
+  }
+}

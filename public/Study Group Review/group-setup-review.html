@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Group Setup Review</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Study Group Setup Review</h2>
+
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-partners" style="width: 100%;"></div>
+      </div>
+      <span class="progress-label">Study Partner Setup</span>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-groups" style="width: 100%;"></div>
+      </div>
+      <span class="progress-label">Study Group Setup</span>
+    </div>
+
+    <div class="review-section">
+      <h3>Step 1: Preferred Group Size</h3>
+      <div id="review-groupSize" class="tag-container"></div>
+
+      <h3>Step 2: Preferred Interaction Style</h3>
+      <div id="review-interactionStyle" class="tag-container"></div>
+
+      <h3>Step 3: Preferred Study Schedule</h3>
+      <div id="review-studySchedule" class="tag-container"></div>
+
+      <h3>Step 4: Preferred Study Session Length</h3>
+      <div id="review-sessionLength" class="tag-container"></div>
+
+      <h3>Step 5: Group Goals</h3>
+      <div id="review-groupGoals" class="tag-container"></div>
+
+      <h3>Step 6: Preferred Engagement Level</h3>
+      <div id="review-engagementLevel" class="tag-container"></div>
+
+      <h3>Step 7: Preferred Leadership Style</h3>
+      <div id="review-leadershipStyle" class="tag-container"></div>
+
+      <h3>Step 8: Preferred Group Support</h3>
+      <div id="review-groupSupport" class="tag-container"></div>
+    </div>
+
+    <div class="button-container">
+      <button type="button" id="prev-button" onclick="navigateToPrevious()">Previous</button>
+      <button type="button" id="submit-button" onclick="submitSetup()">Submit</button>
+    </div>
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>
