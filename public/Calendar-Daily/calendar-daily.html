@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="./index.css">
+    <title>Daily Calendar</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <img src="./public/studyzen-logo-4-1@2x.png" alt="StudyZen Logo" class="sidebar-logo">
+        <nav class="sidebar-menu">
+            <a href="../Dashboard/dashboard.html" class="sidebar-item">Dashboard</a>
+            <a href="../Join Study Group/joinstudygroup.html" class="sidebar-item">Study Groups</a>
+            <a href="../Daily Planner 2/daily2.html" class="sidebar-item">Daily Planner</a>
+            <a href="../Calendar-Daily/calendar-daily.html" class="sidebar-item active">Calendar</a>
+            <a href="../Mindfulness/mindfulness.html" class="sidebar-item">Mindfulness</a>
+        </nav>
+        <div class="sidebar-profile">
+            <img src="https://via.placeholder.com/50" alt="User Avatar" class="sidebar-avatar">
+            <div id="userProfileDropdown" class="sidebar-user-info">
+                <span id="sidebarUsername" class="sidebar-username">Jane Doe</span>
+                <div class="dropdown-content">
+                    <a href="../User Profile/userprofile.html">User Profile</a>
+                    <a href="#" id="logout">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div class="daily-planner">
+        <main class="planner-content">
+            <div class="planner-header">
+                <div class="header-titles">
+                    <h1>Daily Calendar</h1>
+                    <h2 id="current-date"></h2>
+                </div>
+                <div class="nav-buttons">
+                    <button id="prev-day" class="nav-button">❮</button>
+                    <button id="next-day" class="nav-button">❯</button>
+                    <button id="today-button" class="nav-button">Today</button>
+                </div>
+            </div>
+            <div class="planner-grid">
+                <!-- Time slots will be dynamically generated here -->
+                
+            </div>            
+            <div class="task-legend">
+                <div class="legend-item">
+                    <span class="legend-color productivity"></span>
+                    <span class="legend-label">Productivity</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color active-recreation"></span>
+                    <span class="legend-label">Active Recreation</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color personal-development"></span>
+                    <span class="legend-label">Personal Development</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./scripts.js"></script>
+</body>
+</html>

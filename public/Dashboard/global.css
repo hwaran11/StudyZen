@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-montserrat: Montserrat;
+  --font-source-sans-pro: "Source Sans Pro";
+  --font-roboto: Roboto;
+  --font-roboto-serif: "Roboto Serif";
+  --card-title: "SF Pro Text";
+
+  /* font sizes */
+  --font-size-7xl: 26px;
+  --font-size-xl: 20px;
+  --font-size-sm: 14px;
+  --font-size-5xl: 24px;
+  --font-size-xs: 12px;
+  --font-size-lg: 18px;
+  --card-title-size: 16px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --grey: #4d4d4d;
+  --color-goldenrod: rgba(218, 165, 32, 0.5);
+  --zengreen: #00a896;
+  --elegant-navy: #1f2041;
+  --color-gray-100: rgba(0, 0, 0, 0.25);
+  --tranquilteal: #118ab2;
+  --main-element: #005c97;
+  --lavender: #f0e7f6;
+
+  /* Gaps */
+  --gap-3xs: 10px;
+
+  /* Paddings */
+  --padding-9xs: 4px;
+  --padding-xs: 12px;
+
+  /* Border radiuses */
+  --br-8xs: 5px;
+  --br-xl: 20px;
+}

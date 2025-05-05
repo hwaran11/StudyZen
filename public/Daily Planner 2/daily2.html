@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyZen Daily Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <img src="./public/studyzen-logo-4-1@2x.png" alt="StudyZen Logo" class="sidebar-logo">
+            <nav class="sidebar-menu">
+                <a href="../Dashboard/dashboard.html" class="sidebar-item">Dashboard</a>
+                <a href="../Join Study Group/joinstudygroup.html" class="sidebar-item">Study Groups</a>
+                <a href="../Daily Planner 2/daily2.html" class="sidebar-item active">Daily Planner</a>
+                <a href="../Calendar-Daily/calendar-daily.html" class="sidebar-item">Calendar</a>
+                <a href="../Mindfulness/mindfulness.html" class="sidebar-item">Mindfulness</a>
+            </nav>
+            <div class="sidebar-profile">
+                <img src="https://via.placeholder.com/50" alt="User Avatar" class="sidebar-avatar">
+                <div id="userProfileDropdown" class="sidebar-user-info">
+                    <span id="sidebarUsername" class="sidebar-username">Jane Doe</span>
+                    <div class="dropdown-content">
+                        <a href="../User Profile/userprofile.html">User Profile</a>
+                        <a href="#" id="logout">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-content">
+                    <h1>Daily Planner</h1>
+                    <div id="currentDate" class="current-date"></div>
+                </div>
+                <div class="date-nav">
+                    <button id="prevDay" class="nav-btn"><i class="material-icons">chevron_left</i></button>
+                    <input type="date" id="datePicker" class="date-picker">
+                    <button id="nextDay" class="nav-btn"><i class="material-icons">chevron_right</i></button>
+                    <button class="view-calendar-btn" onclick="location.href='../Calendar-Daily/calendar-daily.html'"><i class="material-icons">calendar_today</i> View Calendar</button>
+                </div>
+            </header>
+            <section class="greeting">
+                <h2 id="userGreeting"></h2>
+            </section>
+            <section class="task-columns">
+                <div id="ProductivityTasks" class="task-column">
+                    <h3><i class="material-icons">work</i> Productivity</h3>
+                    <div class="progress-bar"><div class="progress"></div></div>
+                    <div class="task-list"></div>
+                    <button class="add-task" data-category="Productivity"><i class="material-icons">add</i> Add Task</button>
+                </div>
+                <div id="ActiveRecreationTasks" class="task-column">
+                    <h3><i class="material-icons">fitness_center</i> Active Recreation</h3>
+                    <div class="progress-bar"><div class="progress"></div></div>
+                    <div class="task-list"></div>
+                    <button class="add-task" data-category="Active Recreation"><i class="material-icons">add</i> Add Task</button>
+                </div>
+                <div id="PersonalDevelopmentTasks" class="task-column">
+                    <h3><i class="material-icons">self_improvement</i> Personal Development</h3>
+                    <div class="progress-bar"><div class="progress"></div></div>
+                    <div class="task-list"></div>
+                    <button class="add-task" data-category="Personal Development"><i class="material-icons">add</i> Add Task</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Add New Task</h2>
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" required>
+                        <option value="Productivity">Productivity</option>
+                        <option value="Active Recreation">Active Recreation</option>
+                        <option value="Personal Development">Personal Development</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="taskTitle">Task Title:</label>
+                    <input type="text" id="taskTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskDate">Date:</label>
+                    <input type="date" id="taskDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Priority:</label>
+                    <div id="priorityOptions" class="option-grid">
+                        <div class="tag" data-value="High">High</div>
+                        <div class="tag" data-value="Medium">Medium</div>
+                        <div class="tag" data-value="Low">Low</div>
+                    </div>
+                </div>
+                <div class="form-group date-time-group">
+                    <div class="time-picker-container">
+                        <label for="startTime">Start Time:</label>
+                        <input type="text" id="startTime" required>
+                        <div id="startTimeDropdown" class="time-dropdown"></div>
+                    </div>
+                    <div class="time-picker-container">
+                        <label for="endTime">End Time:</label>
+                        <input type="text" id="endTime" required>
+                        <div id="endTimeDropdown" class="time-dropdown"></div>
+                    </div>
+                </div>
+                <button type="submit" class="save-btn">Save Task</button>
+            </form>
+        </div>
+    </div>
+    <div id="snackbar"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>

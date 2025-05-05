@@ -1,0 +1,126 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F0F2F5;
+    color: #343A40;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 800px;
+    margin: 40px auto; /* Center align the container and add margin from top */
+  }
+  
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #212529;
+  }
+  
+  .progress-container {
+    margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    background-color: #E9ECEF;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 8px;
+    position: relative;
+    margin-bottom: 10px; /* Space between progress bars */
+  }
+  
+  .progress {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.3s ease;
+  }
+  
+  #progress-partners {
+    background-color: #28A745; /* Green for study partners */
+  }
+  
+  #progress-groups {
+    background-color: #001f3f; /* Dark navy blue for study groups */
+  }
+  
+  .progress-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #495057;
+    margin-top: 5px;
+    display: block;
+  }
+  
+  label {
+    display: block;
+    margin-top: 24px;
+    font-weight: 600;
+    color: #495057;
+    font-size: 16px;
+  }
+  
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 16px 0 24px;
+  }
+  
+  .tag {
+    background-color: #E9ECEF;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .tag.selected {
+    background-color: #001f3f; /* Dark navy blue */
+    color: #FFFFFF;
+  }
+  
+  .tag:hover {
+    background-color: #084a92; /* Slightly darker dark navy blue */
+    color: #fff;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between; /* Added to space buttons out */
+    margin-top: 20px; /* Added margin top for spacing */
+  }
+  
+  button {
+    background-color: #001f3f; /* Dark navy blue */
+    color: #FFFFFF;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 16px 32px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #001a36; /* Slightly darker dark navy blue */
+  }
+  
+  button:active {
+    transform: scale(0.98);
+  }
+  
+  button:disabled {
+    background-color: #E9ECEF;
+    color: #A8A8A8;
+    cursor: not-allowed;
+  }
+  

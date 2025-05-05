@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Group Setup - Step 8</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Study Group Setup</h2>
+    
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-partners" style="width: 100%;"></div>
+      </div>
+      <span class="progress-label">Study Partner Setup</span>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-groups" style="width: 100%;"></div>
+      </div>
+      <span class="progress-label">Study Group Setup</span>
+    </div>
+
+    <form id="groupForm8">
+      <label for="group-support">Preferred Group Support:</label>
+      <div id="group-support" class="tags-container">
+        <div class="tag" onclick="toggleTag(this)" data-value="Academic support and tutoring">Academic support and tutoring</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Emotional support and stress management">Emotional support and stress management</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Career advice and mentoring">Career advice and mentoring</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Peer accountability and motivation">Peer accountability and motivation</div>
+      </div>
+
+      <div class="button-container">
+        <button type="button" id="prev-button" onclick="navigateToPrevious()">Previous</button>
+        <button type="submit" id="next-button" disabled>Next</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>

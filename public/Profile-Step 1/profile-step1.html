@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Setup - Step 1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="container">
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+    <h2>Tell Us About Yourself</h2>
+    <form id="profileForm">
+      <label for="full-name">Full Name:</label>
+      <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+      
+      <label for="profile-pic" class="profile-pic-upload">
+        <img id="profile-pic-preview" class="profile-pic-preview" style="display: none;">
+      </label>
+      <input type="file" id="profile-pic" name="profile-pic" accept="image/*" required>
+      
+      <label for="short-bio">Short Bio:</label>
+      <textarea id="short-bio" name="short-bio" rows="4" placeholder="Write a short bio about yourself. Let others know what you’re passionate about!"></textarea>
+      
+      <label for="discord-username">Discord Username:</label>
+      <input type="text" id="discord-username" name="discord-username" placeholder="Enter your Discord username" required>
+
+      <label for="discord-id">Discord Profile ID:</label>
+      <input type="text" id="discord-id" name="discord-id" placeholder="Enter your Discord profile ID" required>
+
+      <button type="submit">Next</button>
+    </form>
+  </div>
+
+  <script>
+    function getBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+      });
+    }
+
+    document.getElementById('profileForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+    
+      const fullName = document.getElementById('full-name').value;
+      const profilePic = document.getElementById('profile-pic').files[0];
+      const shortBio = document.getElementById('short-bio').value;
+      const discordUsername = document.getElementById('discord-username').value;
+      const discordId = document.getElementById('discord-id').value;
+
+      const base64ProfilePic = await getBase64(profilePic);
+    
+      const body = {
+        fullName,
+        profilePic: base64ProfilePic,
+        shortBio,
+        discordUsername,
+        discordId
+      };
+    
+      try {
+        const token = localStorage.getItem('token');
+        const response = await fetch('/api/profile/step1', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+          },
+          body: JSON.stringify(body),
+        });
+    
+        const data = await response.json();
+        console.log('Server response:', data);
+    
+        if (response.ok) {
+          alert('Profile step 1 saved');
+          window.location.href = '/Profile-Step 2/profile-step2.html';
+        } else {
+          console.error('Error response:', data);
+          alert(data.message || 'An error occurred');
+        }
+      } catch (error) {
+        console.error('Fetch error:', error);
+        alert('Error: ' + error.message);
+      }
+    });
+    
+    document.getElementById('profile-pic').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const preview = document.getElementById('profile-pic-preview');
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>

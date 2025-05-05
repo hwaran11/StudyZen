@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Setup - Step 4</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Profile Setup</h2>
+    
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-partners" style="width: 40%;"></div>
+      </div>
+      <span class="progress-label">Study Partners Setup</span>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-groups" style="width: 0%;"></div>
+      </div>
+      <span class="progress-label">Study Group Setup</span>
+    </div>
+
+    <form id="profileForm4">
+      <label for="study-goals">Study Goals:</label>
+      <div id="study-goals" class="tags-container">
+        <div class="tag" onclick="toggleTag(this)" data-value="Exam preparation">Exam preparation</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Completing assignments">Completing assignments</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Research projects">Research projects</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="General study">General study</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Long-term mastery of material">Long-term mastery of material</div>
+      </div>
+      <div class="button-container">
+        <button type="button" id="prev-button" onclick="navigateToPrevious()">Previous</button>
+        <button type="submit" id="next-button" disabled>Next</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>

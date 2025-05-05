@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Group Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <img src="./public/studyzen-logo-4-1@2x.png" alt="StudyZen Logo" class="studyzen-logo">
+        <nav class="sidebar-menu">
+            <a href="#" class="sidebar-item">Dashboard</a>
+            <a href="#" class="sidebar-item active">Study Groups</a>
+            <a href="#" class="sidebar-item">Daily Planner</a>
+            <a href="#" class="sidebar-item">Calendar</a>
+            <a href="#" class="sidebar-item">Mindfulness</a>
+        </nav>
+        <div class="sidebar-profile">
+            <img src="path_to_avatar_image.jpg" alt="User Avatar" class="sidebar-avatar">
+            <div class="sidebar-user-info">
+                <span class="sidebar-username">Jane Doe</span>
+                <span class="sidebar-user-status">Online</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="dashboard-header">
+            <h1>Study Group Dashboard</h1>
+            <div class="header-buttons">
+                <button id="createGroupBtn" class="create-group-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    Create New Group
+                </button>
+                <button id="joinGroupBtn" class="join-group-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="8.5" cy="7" r="4"></circle>
+                        <line x1="20" y1="8" x2="20" y2="14"></line>
+                        <line x1="23" y1="11" x2="17" y2="11"></line>
+                    </svg>
+                    Join New Group
+                </button>
+                <button id="findPartnerBtn" class="find-partner-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1 1 0 0 1 .8 1.6L18 21a1 1 0 0 1-1.6 0L15 19.4a1 1 0 0 1 1.6-.8l1.6 1.6 1.2-1.2-1.6-1.6a1 1 0 0 1 1.6-.8L19.4 15zM3.6 15a1 1 0 0 1-.8-1.6L6 9a1 1 0 0 1 1.6 0L9 10.6a1 1 0 0 1-1.6.8L6 9.8 4.8 11l1.6 1.6a1 1 0 0 1-1.6.8L3.6 15zM12 3.4a1 1 0 0 1 1.6-.8L15 4.8l1.6-1.6a1 1 0 0 1 1.6.8L18 6l1.6 1.6a1 1 0 0 1-.8 1.6L15 10l-1.6-1.6a1 1 0 0 1 .8-1.6L15 6l-1.6-1.6a1 1 0 0 1-.8-1.6L12 3.4z"></path>
+                    </svg>
+                    Find Study Partner
+                </button>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <section id="createdGroups" class="dashboard-card">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    My Created Groups
+                </h2>
+                <ul id="createdGroupsList" class="group-list"></ul>
+                <button class="viewAllBtn" data-section="Created">View All</button>
+            </section>
+
+            <section id="joinedGroups" class="dashboard-card">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="8.5" cy="7" r="4"></circle>
+                        <line x1="20" y1="8" x2="20" y2="14"></line>
+                        <line x1="23" y1="11" x2="17" y2="11"></line>
+                    </svg>
+                    Groups I Joined
+                </h2>
+                <ul id="joinedGroupsList" class="group-list"></ul>
+                <button class="viewAllBtn" data-section="Joined">View All</button>
+            </section>
+
+            <section id="notifications" class="dashboard-card">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    Notifications & Upcoming Events
+                </h2>
+                <ul id="notificationsList" class="notification-list"></ul>
+            </section>
+        </div>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

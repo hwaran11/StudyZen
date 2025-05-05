@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Group Setup - Step 3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Study Group Setup</h2>
+    
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-partners" style="width: 100%;"></div>
+      </div>
+      <span class="progress-label">Study Partner Setup</span>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-groups" style="width: 37.5%;"></div>
+      </div>
+      <span class="progress-label">Study Group Setup</span>
+    </div>
+
+    <form id="groupForm3">
+      <label for="study-schedule">Preferred Study Schedule:</label>
+      <div id="study-schedule" class="tags-container">
+        <div class="tag" onclick="toggleTag(this)" data-value="Early morning sessions">Early morning sessions</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Late morning sessions">Late morning sessions</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Afternoon sessions">Afternoon sessions</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Evening sessions">Evening sessions</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Night sessions">Night sessions</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Flexible scheduling">Flexible scheduling</div>
+      </div>
+
+      <div class="button-container">
+        <button type="button" id="prev-button" onclick="navigateToPrevious()">Previous</button>
+        <button type="submit" id="next-button" disabled>Next</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>

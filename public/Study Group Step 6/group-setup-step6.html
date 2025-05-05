@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Group Setup - Step 6</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Study Group Setup</h2>
+    
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-partners" style="width: 100%;"></div>
+      </div>
+      <span class="progress-label">Study Partner Setup</span>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-groups" style="width: 75%;"></div>
+      </div>
+      <span class="progress-label">Study Group Setup</span>
+    </div>
+
+    <form id="groupForm6">
+      <label for="engagement-level">Preferred Engagement Level:</label>
+      <div id="engagement-level" class="tags-container">
+        <div class="tag" onclick="toggleTag(this)" data-value="High engagement (daily sessions, active participation)">High engagement (daily sessions, active participation)</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Moderate engagement (few times a week)">Moderate engagement (few times a week)</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Low engagement (occasional study sessions)">Low engagement (occasional study sessions)</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Flexible engagement (variable based on need)">Flexible engagement (variable based on need)</div>
+      </div>
+
+      <div class="button-container">
+        <button type="button" id="prev-button" onclick="navigateToPrevious()">Previous</button>
+        <button type="submit" id="next-button" disabled>Next</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>

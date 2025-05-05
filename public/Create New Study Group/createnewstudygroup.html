@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Study Group</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <h1>Create Your Perfect Study Group</h1>
+    </header>
+    
+    <main class="container">
+        <form id="create-group-form">
+            <div class="form-column">
+                <div class="form-group">
+                    <label for="groupName">Group Name</label>
+                    <input type="text" id="groupName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Group Size</label>
+                    <div class="tag-container" id="groupSize">
+                        <button type="button" class="tag" data-value="Small (2-4 members)">Small (2-4 members)</button>
+                        <button type="button" class="tag" data-value="Medium (5-8 members)">Medium (5-8 members)</button>
+                        <button type="button" class="tag" data-value="Large (9+ members)">Large (9+ members)</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Interaction Style</label>
+                    <div class="tag-container" id="interactionStyle">
+                        <button type="button" class="tag" data-value="Informal and spontaneous discussions">Informal and spontaneous discussions</button>
+                        <button type="button" class="tag" data-value="Structured and goal-oriented sessions">Structured and goal-oriented sessions</button>
+                        <button type="button" class="tag" data-value="Regular meetings with set agendas">Regular meetings with set agendas</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Study Schedule</label>
+                    <div class="tag-container" id="studySchedule">
+                        <button type="button" class="tag" data-value="Early morning sessions">Early morning sessions</button>
+                        <button type="button" class="tag" data-value="Late morning sessions">Late morning sessions</button>
+                        <button type="button" class="tag" data-value="Afternoon sessions">Afternoon sessions</button>
+                        <button type="button" class="tag" data-value="Evening sessions">Evening sessions</button>
+                        <button type="button" class="tag" data-value="Flexible scheduling">Flexible scheduling</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-column">
+                <div class="form-group">
+                    <label>Session Length</label>
+                    <div class="tag-container" id="sessionLength">
+                        <button type="button" class="tag" data-value="Short (30-60 minutes)">Short (30-60 minutes)</button>
+                        <button type="button" class="tag" data-value="Medium (1-2 hours)">Medium (1-2 hours)</button>
+                        <button type="button" class="tag" data-value="Long (2+ hours)">Long (2+ hours)</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Group Goals</label>
+                    <div class="tag-container" id="groupGoals">
+                        <button type="button" class="tag" data-value="Exam preparation">Exam preparation</button>
+                        <button type="button" class="tag" data-value="Completing assignments">Completing assignments</button>
+                        <button type="button" class="tag" data-value="Research projects">Research projects</button>
+                        <button type="button" class="tag" data-value="General study">General study</button>
+                        <button type="button" class="tag" data-value="Long-term mastery of material">Long-term mastery of material</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Engagement Level</label>
+                    <div class="tag-container" id="engagementLevel">
+                        <button type="button" class="tag" data-value="Low engagement (occasional study sessions)">Low engagement (occasional study sessions)</button>
+                        <button type="button" class="tag" data-value="Flexible engagement (variable based on need)">Flexible engagement (variable based on need)</button>
+                        <button type="button" class="tag" data-value="Moderate engagement (few times a week)">Moderate engagement (few times a week)</button>
+                        <button type="button" class="tag" data-value="High engagement (daily sessions, active participation)">High engagement (daily sessions, active participation)</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Leadership Style</label>
+                    <div class="tag-container" id="leadershipStyle">
+                        <button type="button" class="tag" data-value="No formal leader (collaborative leadership)">No formal leader (collaborative leadership)</button>
+                        <button type="button" class="tag" data-value="Rotational leadership (different leaders per session)">Rotational leadership (different leaders per session)</button>
+                        <button type="button" class="tag" data-value="Fixed leader (one consistent leader)">Fixed leader (one consistent leader)</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group full-width">
+                <label>Group Support</label>
+                <div class="tag-container" id="groupSupport">
+                    <button type="button" class="tag" data-value="Peer accountability and motivation">Peer accountability and motivation</button>
+                    <button type="button" class="tag" data-value="Academic support and tutoring">Academic support and tutoring</button>
+                    <button type="button" class="tag" data-value="Emotional support and stress management">Emotional support and stress management</button>
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="discordChannelLink">Discord Channel Link</label>
+                <input type="text" id="discordChannelLink" placeholder="Enter Discord Channel Link">
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Create Group</button>
+        </form>
+    </main>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Group Setup - Step 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Study Group Setup</h2>
+    
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-partners" style="width: 100%;"></div>
+      </div>
+      <span class="progress-label">Study Partner Setup</span>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-groups" style="width: 25%;"></div>
+      </div>
+      <span class="progress-label">Study Group Setup</span>
+    </div>
+
+    <form id="groupForm2">
+      <label for="interaction-style">Preferred Interaction Style:</label>
+      <div id="interaction-style" class="tags-container">
+        <div class="tag" onclick="toggleTag(this)" data-value="Structured and goal-oriented sessions">Structured and goal-oriented sessions</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Flexible and dynamic sessions">Flexible and dynamic sessions</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Regular meetings with set agendas">Regular meetings with set agendas</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Informal and spontaneous discussions">Informal and spontaneous discussions</div>
+      </div>
+
+      <div class="button-container">
+        <button type="button" id="prev-button" onclick="navigateToPrevious()">Previous</button>
+        <button type="submit" id="next-button" disabled>Next</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Study Groups - StudyZen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <img src="./public/studyzen-logo-4-1@2x.png" alt="StudyZen Logo" class="sidebar-logo">
+        <nav class="sidebar-menu">
+            <a href="../Dashboard/dashboard.html" class="sidebar-item">Dashboard</a>
+            <a href="../Join Study Group/joinstudygroup.html" class="sidebar-item active">Study Groups</a>
+            <a href="../Daily Planner 2/daily2.html" class="sidebar-item">Daily Planner</a>
+            <a href="../Calendar-Daily/calendar-daily.html" class="sidebar-item">Calendar</a>
+            <a href="../Mindfulness/mindfulness.html" class="sidebar-item">Mindfulness</a>
+        </nav>
+        <div class="sidebar-profile">
+            <img src="https://via.placeholder.com/50" alt="User Avatar" class="sidebar-avatar">
+            <div id="userProfileDropdown" class="sidebar-user-info">
+                <span id="sidebarUsername" class="sidebar-username">Jane Doe</span>
+                <div class="dropdown-content">
+                    <a href="../User Profile/userprofile.html">User Profile</a>
+                    <a href="#" id="logout">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content" role="main">
+        <div class="server-join-card">
+            <h2>Join Our Study Group Server</h2>
+            <button class="join-server-button" onclick="joinStudyGroupServer()">Join Server</button>
+        </div>
+
+        <h1>All Study Groups</h1>
+
+        <div class="search-container">
+            <input type="text" id="group-search" placeholder="Search for study groups...">
+        </div>
+
+        <div class="top-right-container">
+            <h2 class="section-heading">Available Study Groups</h2>
+            <div class="action-buttons">
+                <button class="action-button create-group-button" onclick="createNewGroup()">Create New Group</button>
+                <button class="action-button view-all-button" onclick="viewRecommendedGroups()">View Recommended Groups</button>
+            </div>
+        </div>
+
+        <div id="all-group-list" class="section" aria-label="All Study Groups">
+            <!-- Study group cards will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <div id="discordModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Join Discord Channel</h2>
+            <p id="discordChannelId"></p>
+            <button id="copy-discord-id" class="copy-btn" onclick="copyToClipboard()">Copy Channel ID</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

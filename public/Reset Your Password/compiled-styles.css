@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700");
+@import url("https://api.fontshare.com/css?f[]=montserrat@400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source Sans Pro:wght@400;700");
+@import url("https://api.fontshare.com/css?f[]=source sans pro@400,700&display=swap");
+
+p,
+ol,
+ul {
+  margin: 0px;
+}
+
+button {
+  padding: 0px;
+}
+
+ol,
+ul {
+  padding-inline-start: 1.5em;
+}
+
+input {
+  background-image: none;
+  background-color: transparent;
+}
+
+.reset-your-password-reset-your-password {
+  width: 100%;
+  display: flex;
+  padding-top: 284px;
+  padding-right: 616px;
+  padding-left: 616px;
+  padding-bottom: 284px;
+  background-color: rgba(255, 251, 234, 1);
+  align-items: center;
+}
+
+.reset-your-password-t-rectangle {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 27px;
+  width: 688px;
+  flex-direction: column;
+}
+
+.reset-your-password-rectangle {
+  display: flex;
+  padding-top: 50px;
+  padding-left: 60px;
+  padding-bottom: 74px;
+  flex-grow: 1;
+  flex-direction: column;
+  row-gap: 7px;
+  background-color: rgba(255, 255, 255, 1);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  line-height: normal;
+  letter-spacing: 0em;
+}
+
+.reset-your-password-reset-your-password-1 {
+  width: 518px;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.reset-your-password-t-time-for-afresh-start-go-ahead-and-set-anew-password-rectangle {
+  width: 627px;
+  font-size: 20px;
+}
+
+.reset-your-password-para {
+  font-weight: 500;
+  font-family: Montserrat;
+}
+
+.reset-your-password-rectangle-1 {
+  display: flex;
+  padding-top: 17px;
+  padding-right: 22px;
+  padding-left: 22px;
+  padding-bottom: 17px;
+  margin-top: 20px;
+  width: 567px;
+  background-color: rgba(255, 255, 255, 1);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.5);
+  border-style: solid;
+}
+
+.reset-your-password-new-password {
+  flex-grow: 1;
+  font-family: Source Sans Pro;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  outline: none;
+  min-width: 0;
+}
+
+.reset-your-password-t-rectangle-1 {
+  display: flex;
+  padding-top: 17px;
+  padding-right: 60px;
+}
+
+.reset-your-password-rectangle-2 {
+  display: flex;
+  padding-top: 17px;
+  padding-right: 22px;
+  padding-left: 22px;
+  padding-bottom: 17px;
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 1);
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.5);
+  border-style: solid;
+  width: 567px;
+}
+
+.reset-your-password-confirm-password {
+  flex-grow: 1;
+  font-family: Source Sans Pro;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  outline: none;
+  min-width: 0;
+}
+
+.reset-your-password-sign-up {
+  padding-top: 16px;
+  padding-right: 86px;
+  padding-left: 76px;
+  padding-bottom: 16px;
+  margin-top: 24px;
+  margin-right: 60px;
+  background-color: rgba(0, 0, 0, 1);
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: Source Sans Pro;
+  color: rgba(255, 255, 255, 1);
+}
+
+.reset-your-password-rectangle-1:focus-within {
+  box-shadow: 0 0 4px #1e40af;
+}
+
+.reset-your-password-new-password:placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.reset-your-password-rectangle-2:focus-within {
+  box-shadow: 0 0 4px #1e40af;
+}
+
+.reset-your-password-confirm-password:placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}

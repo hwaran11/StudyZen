@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Setup - Step 8</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Profile Setup</h2>
+    
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-partners" style="width: 80%;"></div>
+      </div>
+      <span class="progress-label">Study Partners Setup</span>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress-groups" style="width: 0%;"></div>
+      </div>
+      <span class="progress-label">Study Group Setup</span>
+    </div>
+
+    <form id="profileForm8">
+      <label for="support-needs">Support You Need from a Study Partner:</label>
+      <div id="support-needs" class="tags-container">
+        <div class="tag" onclick="toggleTag(this)" data-value="Help with thorough analysis and detailed study">Help with thorough analysis and detailed study</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Encouragement and motivation">Encouragement and motivation</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Stress management and mutual support">Stress management and mutual support</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Emotional awareness and support">Emotional awareness and support</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Regular review sessions to reinforce learning">Regular review sessions to reinforce learning</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Flexibility in study schedules">Flexibility in study schedules</div>
+        <div class="tag" onclick="toggleTag(this)" data-value="Consistency and routine">Consistency and routine</div>
+      </div>
+      <div class="button-container">
+        <button type="button" id="prev-button" onclick="navigateToPrevious()">Previous</button>
+        <button type="submit" id="next-button" disabled>Next</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>
